@@ -1,0 +1,237 @@
+<!-- <div class="card tutor-item">
+  <img src="assets/homepage/tutors/0{{ tutor.id }}.jpg" class="card-img-top" alt>
+  <label class="popular badge-item" *ngIf="tutor.type === 'POPULAR'">Popular</label>
+  <label class="new badge-item" *ngIf="tutor.type === 'NEW'">New</label>
+  <label class="top badge-item" *ngIf="tutor.type === 'TOP_RATED'">Top Rated</label>
+  <div class="card-body px-2 py-3">
+    <h5 class="card-title">
+      Practice UX weekly: season one
+      <img src="assets/svg/user-one.svg" class="float-right" draggable="false" *ngIf="!tutor.isGroup" width="25px"
+        height="25px" />
+      <img src="assets/svg/user-group.svg" matTooltip="One-o-One" matTooltipPosition="above" class="float-right"
+        draggable="false" *ngIf="tutor.isGroup" height="25px" />
+    </h5>
+    <div>
+      <rating [(ngModel)]="tutor.rate" max="5" [readonly]="true"></rating>
+      <span class="count">{{ tutor.rate }}</span>
+      <span class="review">(30 review)</span>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6 d-flex menu align-items-center">
+        <img src="assets/svg/timer.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Start date:</strong>
+        <span>20 Feb 20</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center">
+        <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+        <strong>End date:</strong>
+        <span>23 Feb 20</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center">
+        <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Total hour:</strong>
+        <span>30hrs</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center">
+        <img src="assets/svg/students.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Max students:</strong>
+        <span>3</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center">
+        <img src="assets/svg/class.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Classes:</strong>
+        <span>12</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center">
+        <img src="assets/svg/calendar.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Days:</strong>
+        <span>Fri, Sat, Sun</span>
+      </div>
+      <div class="col d-flex menu align-items-center">
+        <img src="assets/svg/timer.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Time:</strong>
+        <span>6pm : 8pm (2 hours)</span>
+      </div>
+    </div>
+    <div class="row info mt-3">
+      <div class="col-md-2 d-flex align-items-center">
+        <img src="assets/homepage/courses/person.png" meTutorsDefaultAvatar alt="">
+      </div>
+      <div class="col-md-10 d-flex justify-content-center flex-column">
+        <h2>David Stevenson</h2>
+        <h3>Expert & engineering tutor</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex align-items-center mt-4 actions">
+        <h3 class="m-0">Price: <strong>$56.99</strong></h3>
+        <button mat-flat-button color="primary" class="flex-grow-1 start-btn">
+          Book a Class
+        </button>
+        <button mat-button class="more">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="row card-item">
+  <div class="col-md-4">
+    <img src="assets/homepage/girl.png" meTutorsDefaultAvatar alt="" width="90px" height="90px" class="img-avatar">
+  </div>
+  <div class="col-md-8">
+    <h2>
+      Anna Mendez
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+        <g fill="none" fill-rule="evenodd">
+          <g>
+            <g>
+              <g>
+                <g>
+                  <g>
+                    <path d="M0 0L20 0 20 19.943 0 19.943z"
+                      transform="translate(-461 -4127) translate(0 3765) translate(211 331) translate(16 28.955) translate(234 3.983)" />
+                    <path fill="#3BB3C1" fill-rule="nonzero"
+                      d="M10 18.281c-4.603 0-8.333-3.72-8.333-8.31 0-4.589 3.73-8.31 8.333-8.31 4.602 0 8.333 3.721 8.333 8.31 0 4.59-3.73 8.31-8.333 8.31zm-.83-4.985l5.89-5.876-1.178-1.175-4.713 4.7-2.357-2.35L5.633 9.77l3.536 3.526z"
+                      transform="translate(-461 -4127) translate(0 3765) translate(211 331) translate(16 28.955) translate(234 3.983)" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </h2>
+    <h3>Professional & Expert tutors</h3>
+    <div class="row">
+      <div class="col-6">
+        <button mat-button class="rate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="17" viewBox="0 0 14 17">
+            <g fill="none" fill-rule="evenodd">
+              <g>
+                <g>
+                  <g>
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M0 0L14 0 14 13.96 0 13.96z"
+                            transform="translate(-340 -4194) translate(0 3765) translate(211 331) translate(16 28.955) translate(104 66.813) translate(9 4.986)" />
+                          <path fill="#FF8300" fill-rule="nonzero"
+                            d="M7 10.621L2.886 12.918 3.804 8.306 0.342 5.114 5.025 4.56 7 0.291 8.975 4.56 13.658 5.114 10.195 8.306 11.114 12.918z"
+                            transform="translate(-340 -4194) translate(0 3765) translate(211 331) translate(16 28.955) translate(104 66.813) translate(9 4.986)" />
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <span>4.9/5</span>
+        </button>
+      </div>
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+          <g fill="none" fill-rule="evenodd">
+            <g>
+              <g>
+                <g>
+                  <g>
+                    <g>
+                      <g>
+                        <path d="M0 0L16 0 16 15.955 0 15.955z"
+                          transform="translate(-823 -4194) translate(0 3765) translate(211 331) translate(399) translate(207 93.773) translate(6 5.983)" />
+                        <path fill="#949494" fill-rule="nonzero"
+                          d="M12.243 11.543L8 15.773l-4.243-4.23c-2.343-2.336-2.343-6.125 0-8.461C6.101.745 9.9.745 12.243 3.082c2.343 2.336 2.343 6.125 0 8.461zM8 8.643c.736 0 1.333-.596 1.333-1.33 0-.735-.597-1.33-1.333-1.33s-1.333.595-1.333 1.33c0 .734.597 1.33 1.333 1.33z"
+                          transform="translate(-823 -4194) translate(0 3765) translate(211 331) translate(399) translate(207 93.773) translate(6 5.983)" />
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>
+          Egypt
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 list">
+    <div class="row">
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+          <g fill="none" fill-rule="evenodd">
+            <g>
+              <g>
+                <g>
+                  <g>
+                    <g>
+                      <path d="M0 0L16 0 16 15.955 0 15.955z"
+                        transform="translate(-233 -4238) translate(0 3765) translate(211 331) translate(16 137.649) translate(6 5.983)" />
+                      <path fill="#949494" fill-rule="nonzero"
+                        d="M1.333 14.625c0-2.937 2.388-5.318 5.334-5.318 2.945 0 5.333 2.38 5.333 5.318H1.333zm5.334-5.983c-2.21 0-4-1.785-4-3.989 0-2.203 1.79-3.988 4-3.988s4 1.785 4 3.988c0 2.204-1.79 3.99-4 3.99zm4.908 1.485c2.092.536 3.603 2.35 3.747 4.498h-1.989c0-1.735-.666-3.314-1.758-4.498zm-1.348-1.513c1.13-1.008 1.775-2.449 1.773-3.96.001-.909-.232-1.803-.677-2.595C12.88 2.37 14 3.735 14 5.319c0 .957-.414 1.87-1.137 2.5-.723.632-1.684.921-2.636.795z"
+                        transform="translate(-233 -4238) translate(0 3765) translate(211 331) translate(16 137.649) translate(6 5.983)" />
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>
+          Help 300 student
+        </span>
+      </div>
+      <div class="col-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18">
+          <g fill="none" fill-rule="evenodd">
+            <g>
+              <g>
+                <g>
+                  <g>
+                    <g>
+                      <path d="M0 0L16 0 16 15.955 0 15.955z"
+                        transform="translate(-404 -4238) translate(0 3765) translate(211 331) translate(187 137.649) translate(6 5.983)" />
+                      <path fill="#949494" fill-rule="nonzero"
+                        d="M1.333 5.979c0-1.058.421-2.072 1.171-2.82.75-.747 1.769-1.166 2.83-1.165h5.333c2.208 0 4 1.792 4 3.985v7.981H5.333c-2.208 0-4-1.791-4-3.984V5.979zm8 1.334v1.33h1.334v-1.33H9.333zm-4 0v1.33h1.334v-1.33H5.333z"
+                        transform="translate(-404 -4238) translate(0 3765) translate(211 331) translate(187 137.649) translate(6 5.983)" />
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <span>
+          Ask 120 Questions
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <p class="bio">
+      Bio: Hello everyone! My name is Charlene
+      and I'm from China… <a href="">read more</a>
+    </p>
+  </div>
+
+  <div class="col-12 specialization">
+    <h2>Specialization:</h2>
+    <span>Geographics</span>
+    <span>Math</span>
+    <span>Science</span>
+  </div>
+
+  <div class="col-12 d-flex actions">
+    <button mat-flat-button color="primary" class="flex-grow-1 book">
+      Book a Class
+    </button>
+    <button mat-button class="more">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+</div>

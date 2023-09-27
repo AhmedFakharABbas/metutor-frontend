@@ -1,0 +1,99 @@
+<div class="row featured-tutors">
+  <div class="col-md-7">
+    <h1>
+      Featured Tutors
+    </h1>
+  </div>
+  <div class="col-md-5">
+    <a mat-button class="main-button-transparent float-right">
+      Find more tutors
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.172 10.9999H4V12.9999H16.172L10.808 18.3639L12.222 19.7779L20 11.9999L12.222 4.22192L10.808 5.63592L16.172 10.9999Z"
+          fill="#3BB3C1" />
+      </svg>
+    </a>
+  </div>
+
+  <div class="col-12">
+    <p>
+      Choose from more than 500 professional academic instructors in different subjects and study fields
+    </p>
+    <p>
+      Our tutors are passionate about providing the best possible learning experience
+      for our students. We want every one of our students to meet and even surpass their learning goals
+    </p>
+  </div>
+
+  <div class="col-12 mt-4">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let teacher of teachers; let i = index">
+        <div class="row card-item">
+          <div class="col-4">
+            <div class="position-relative img-avatar">
+              <img [src]="teacher?.avatar" meTutorsDefaultAvatar alt="" width="90px" height="90px">
+              <svg class="position-absolute status" width="16" height="16" [ngClass]="{
+                  'is-online': teacher?.status === tutorStatus.online, 
+                  'is-busy': teacher?.status === tutorStatus.busy, 
+                  'is-offline': teacher?.status === tutorStatus.offline, 
+                  'is-away': teacher?.status === tutorStatus.away
+                }" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="7" fill="#949494" stroke="white" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+          <div class="col-8">
+            <h2>
+              {{ teacher?.name }}
+              <!-- <span class="text-uppercase pro">Pro</span>
+              <span class="text-uppercase verified">Verified</span> -->
+            </h2>
+            <h3 *ngIf="teacher?.major">{{ teacher?.major }}</h3>
+            <div>
+              <rating [ngModel]="teacher?.rate" max="5" [readonly]="true"></rating>
+              <span class="count">{{ teacher?.rate }}</span>
+              <span class="review" *ngIf="teacher?.reviewsCount">({{ teacher?.reviewsCount }} reviews)</span>
+            </div>
+          </div>
+
+          <div class="col-12 list">
+            <div class="row">
+              <div class="col-6 d-flex" *ngIf="teacher?.country">
+                <img src="assets/svg/map.svg" class="icon" draggable="false" width="16" height="16" alt="">
+                <span>
+                  From {{ teacher?.country }}
+                </span>
+              </div>
+              <div class="col-6 d-flex" *ngIf="teacher?.studentNumber">
+                <img src="assets/svg/students.svg" class="icon" draggable="false" width="16" height="16" alt="">
+                <span>
+                  Help {{ teacher?.studentNumber }} student
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12" *ngIf="teacher?.bio">
+            <p class="bio">
+              Bio: {{ teacher?.bio }}
+            </p>
+          </div>
+
+          <div class="col-12 specialization" *ngIf="teacher?.subjects && teacher?.subjects.length">
+            <h2>Specialization:</h2>
+            <span *ngFor="let subject of teacher?.subjects">{{ subject?.name }}</span>
+          </div>
+
+          <div class="col-12 d-flex actions">
+            <button mat-flat-button color="primary" class="flex-grow-1 book">
+              Book a Class
+            </button>
+            <button mat-button class="more">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>

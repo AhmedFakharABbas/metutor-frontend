@@ -1,0 +1,55 @@
+<div class="card list-classroom">
+  <div class="card-body">
+    <div class="row row-block">
+      <div class="col-md-8">
+        <div class="list-classes" *ngIf="!loading">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th>Day</th>
+              <th>Date</th>
+              <th>Start time</th>
+              <th>End time</th>
+              <th>Duration</th>
+            </tr>
+            <tr *ngFor="let classroom of classrooms">
+              <td>{{ classroom?.date | date: 'EEEE' }}</td>
+              <td>{{ classroom?.date | date: 'd MMM y' }}</td>
+              <td>{{ classroom?.startTime }}</td>
+              <td>{{ classroom?.endTime }}</td>
+              <td>{{ classroom?.duration + 'hrs' }}</td>
+              <div class="actions">
+                <button mat-button class="delete-btn" *ngIf="classrooms.length > 1"
+                  (click)="deleteClassroom(classroom?.number)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-button class="edit-btn" (click)="editClassroom(classroom)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+            </tr>
+          </table>
+        </div>
+        <div *ngIf="loading" class="ph-row mt-2">
+          <div class="ph-col-12 big" *ngFor="let _ of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <metutors-course-details [course]="course" [isLoading]="isLoadingCourse"></metutors-course-details>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 overflow-hidden">
+        <button mat-flat-button color="primary" class="float-right" type="button"
+          (click)="onNext.emit(); loadTutors.emit(classrooms)">
+          Save & continue
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+        <button mat-button class="float-right back-btn" type="button" (click)="onBack.emit()">
+          <mat-icon>arrow_back</mat-icon>
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

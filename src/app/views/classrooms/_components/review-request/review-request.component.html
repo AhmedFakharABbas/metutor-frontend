@@ -1,0 +1,190 @@
+<div class="card review-request">
+  <div class="card-body">
+    <div class="row row-block">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Course level</h3>
+            <h4>{{ reviewInfo?.courseLevel }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Course field</h3>
+            <h4>{{ reviewInfo?.courseField }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Languages name</h3>
+            <h4>{{ reviewInfo?.preferedTutoringLanguage }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Book type</h3>
+            <h4>{{ reviewInfo?.information }}</h4>
+          </div>
+          <ng-container *ngIf="reviewInfo?.info === academicTutoringTextbook.info">
+            <div class="col-md-3">
+              <h3>Book name</h3>
+              <h4>{{ reviewInfo?.name }}</h4>
+            </div>
+            <div class="col-md-3">
+              <h3>Book edition</h3>
+              <h4>{{ reviewInfo?.edition }} edition</h4>
+            </div>
+            <div class="col-md-3">
+              <h3>Book author</h3>
+              <h4>{{ reviewInfo?.author }}</h4>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <metutors-course-details [course]="course" [isLoading]="isLoadingCourse"></metutors-course-details>
+      </div>
+    </div>
+    <div class="row row-block">
+      <div class="col-md-4">
+        <h2>Classroom Details</h2>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Starting date</h3>
+            <h4>{{ reviewInfo?.startDate | date }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Ending date</h3>
+            <h4>{{ reviewInfo?.endDate | date }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Total hours</h3>
+            <h4>{{ reviewInfo?.hours }} hours</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Type</h3>
+            <h4>{{ reviewInfo?.type }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Starting time</h3>
+            <h4>{{ reviewInfo?.startTime }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Ending time </h3>
+            <h4>{{ reviewInfo?.endTime }}</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Total Classes</h3>
+            <h4>{{ reviewInfo?.classes }} Classes</h4>
+          </div>
+          <div class="col-md-6">
+            <h3>Classroom days </h3>
+            <h4>
+              <ng-container *ngFor="let day of reviewInfo?.days; let isLast = last">
+                {{ day }}
+                <ng-container *ngIf="!isLast"> - </ng-container>
+              </ng-container>
+            </h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Total price</h3>
+            <h4>{{ reviewInfo?.price | currency:'USD' }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-block" *ngIf="reviewInfo?.appointments && reviewInfo?.appointments.length">
+      <div class="col-md-4">
+        <h2>List of schedule class</h2>
+      </div>
+      <div class="col-md-8">
+        <h6>Classroom list schedule</h6>
+        <div class="list-classes">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th>Day</th>
+              <th>Date</th>
+              <th>Start time</th>
+              <th>End time</th>
+              <th>Duration</th>
+            </tr>
+            <tr *ngFor="let appointment of reviewInfo?.appointments">
+              <td>{{ appointment?.date | date: 'EEEE' }}</td>
+              <td>{{ appointment?.date | date: 'd MMM y' }}</td>
+              <td>{{ appointment?.startTime }}</td>
+              <td>{{ appointment?.endTime }}</td>
+              <td>{{ appointment?.duration + 'hrs' }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row row-block">
+      <div class="col-md-4">
+        <h2>List of schedule class</h2>
+      </div>
+      <div class="col-md-8">
+        <h6>Classroom tutor</h6>
+        <div class="row list-tutors">
+          <div class="position-relative img-avatar">
+            <img [src]="reviewInfo?.tutor?.avatar" meTutorsDefaultAvatar alt="" width="60px" height="60px">
+            <svg class="position-absolute status" width="16" height="16" [ngClass]="{
+                    'is-online': reviewInfo?.tutor?.status === tutorStatus.online, 
+                    'is-busy': reviewInfo?.tutor?.status === tutorStatus.busy, 
+                    'is-offline': reviewInfo?.tutor?.status === tutorStatus.offline, 
+                    'is-away': reviewInfo?.tutor?.status === tutorStatus.away
+                  }" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7" fill="#949494" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="col">
+            <h2>
+              {{ reviewInfo?.tutor?.name }}
+              <!-- <span class="text-uppercase pro">Pro</span>
+                  <span class="text-uppercase verified">Verified</span> -->
+            </h2>
+            <h3 *ngIf="reviewInfo?.tutor?.major">{{ reviewInfo?.tutor?.major }}</h3>
+            <div class="row">
+              <div class="col-12 d-flex align-items-center">
+                <div>
+                  <rating [ngModel]="reviewInfo?.tutor?.rate" [ngModelOptions]="{standalone: true}" max="5"
+                    [readonly]="true">
+                  </rating>
+                  <span class="count">{{ reviewInfo?.tutor?.rate }}</span>
+                  <span class="review" *ngIf="reviewInfo?.tutor?.reviewsCount">({{ reviewInfo?.tutor?.reviewsCount }}
+                    reviews)</span>
+                </div>
+                <div class="d-flex ml-3" *ngIf="reviewInfo?.tutor?.country">
+                  <img src="assets/svg/map.svg" class="icon" draggable="false" width="16" height="16" alt="">
+                  <span class="review">
+                    From {{ reviewInfo?.tutor?.country }}
+                  </span>
+                </div>
+                <div class="d-flex ml-3" *ngIf="reviewInfo?.tutor?.studentNumber">
+                  <img src="assets/svg/students.svg" class="icon" draggable="false" width="16" height="16" alt="">
+                  <span class="review">
+                    Help {{ reviewInfo?.tutor?.studentNumber }} student
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="col-md-3 full-profile" [routerLink]="'/tutor-profile/' + reviewInfo?.tutor?.id" target="_blank">
+            <img src="assets/svg/share-link.svg" draggable="false" width="16px" height="16px" alt="">
+            Full profile
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-8 overflow-hidden">
+        <button mat-flat-button color="primary" class="float-right" type="button" [disabled]="isCreatingCourse"
+          (click)="submitForm.emit()">
+          Check out
+          <mat-icon *ngIf="!isCreatingCourse">arrow_forward</mat-icon>
+          <mat-icon class="spinner" *ngIf="isCreatingCourse">autorenew</mat-icon>
+        </button>
+        <button mat-button class="float-right back-btn" type="button" (click)="onBack.emit()">
+          <mat-icon>arrow_back</mat-icon>
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

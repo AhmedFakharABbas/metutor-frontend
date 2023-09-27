@@ -1,0 +1,62 @@
+.study-metutors {
+  padding: 80px 15px;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+  }
+
+  p {
+    font-size: 20px;
+    color: #949494;
+    margin-bottom: 50px;
+  }
+
+  .item {
+    margin-bottom: 10px;
+
+    .card {
+      border-top: 3px solid #3bb3c1;
+    }
+
+    &:nth-child(2) .card {
+      border-color: #ff554b;
+    }
+
+    &:nth-child(3) .card {
+      border-color: #be63f9;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #2a2a2a;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 16px;
+      color: #696969;
+      margin-bottom: 25px;
+    }
+
+    a {
+      color: #3bb3c1;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .study-metutors {
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<div class="row metutors-values">
+  <div class="col-md-12 text-center">
+    <h1>MEtutors Values</h1>
+    <p>
+      Explore more than 500 courses in different subjects, languages and study fields.
+    </p>
+  </div>
+
+  <div class="col-12" *ngIf="valuesStatistics">
+    <div class="row">
+      <div class="col-md-6 item">
+        <div class="card text-center">
+          <div class="card-body">
+            <img src="assets/svg/collaboration.svg" alt="" draggable="false" width="65" height="65" />
+            <h2>{{ valuesStatistics?.left_box_title }}</h2>
+            <h4>{{ valuesStatistics?.left_box_content }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 item">
+        <div class="card text-center">
+          <div class="card-body">
+            <img src="assets/svg/passionate.svg" alt="" draggable="false" width="65" height="65" />
+            <h2>{{ valuesStatistics?.right_box_title }}</h2>
+            <h4>{{ valuesStatistics?.right_box_content }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

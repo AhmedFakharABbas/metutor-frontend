@@ -1,0 +1,53 @@
+.classrooms-slide {
+  background-color: #FFF;
+  padding: 50px 0 70px;
+  border-bottom: 1px solid #e2e2e2;
+
+  .card-title {
+    color: #2a2a2a;
+    font-size: 45px;
+  }
+
+  .count {
+    color: #FF8E18;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .review {
+    color: #949494;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .list {
+    padding: 5px;
+
+    .menu {
+      padding-right: 0;
+
+      img {
+        margin-right: 5px;
+      }
+
+      span {
+        color: #2a2a2a;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+
+      strong {
+        font-size: 16px;
+        color: #696969;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .desc {
+    color: #696969;
+    font-size: 17px;
+    margin: 15px 0;
+  }
+}

@@ -1,0 +1,158 @@
+:host ::ng-deep .list-classroom {
+  border-radius: 12px;
+  border: solid 1px #e2e2e2;
+  box-shadow: none;
+  overflow: hidden;
+
+  h2 {
+    color: #2a2a2a;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2a2a2a;
+  }
+
+  h4 {
+    color: #696969;
+    font-size: 18px;
+  }
+
+  .list-classes {
+    border-radius: 6px;
+    border: solid 1px #ededed;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    table {
+      tr {
+        position: relative;
+
+        th {
+          color: #949494;
+          font-size: 13px;
+          border-top: none;
+          background-color: #fafafa;
+        }
+
+        td {
+          border-top: 1px solid #ededed;
+        }
+
+        &:first-child {
+          background-color: #fafafa;
+        }
+
+        .actions {
+          position: absolute;
+          right: -100%;
+          transition: all 0.25s ease-in-out;
+          margin-top: 10px;
+          display: none;
+
+          button {
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            font-size: 15px;
+            min-width: 0;
+            margin-left: 10px;
+
+            mat-icon {
+              font-size: 17px;
+            }
+
+            &.edit-btn {
+              background-color: rgb(59 179 193 / 10%);
+              color: #3bb3c1;
+            }
+
+            &.delete-btn {
+              background-color: rgb(255 85 75 / 10%);
+              color: #ff554b;
+            }
+          }
+        }
+
+        &:hover {
+          .actions {
+            right: 20px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 20px;
+
+    &.back-btn {
+      margin-right: 10px;
+      border: solid 1px #3bb3c1;
+      color: #3bb3c1;
+    }
+  }
+}
+
+:host ::ng-deep .edit-classroom {
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+
+    span {
+      color: #696969;
+      font-size: 15px;
+      font-weight: normal;
+    }
+  }
+
+  .mat-dialog-content {
+    overflow: visible;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin: 15px 0 5px;
+  }
+
+  p-calendar {
+    width: 100%;
+    display: block;
+
+    .p-calendar-timeonly,
+    .p-calendar-timeonly input {
+      width: 100%;
+    }
+
+    .p-calendar-timeonly input {
+      border: 1px solid #ced4da;
+
+      &:hover {
+        border-color: #ced4da;
+      }
+    }
+  }
+
+  p {
+    color: #696969;
+    font-size: 18px;
+  }
+
+  .btn-save {
+    background-color: #3bb3c1;
+    color: #fff;
+    font-weight: bold;
+    padding: 3px 20px;
+    float: right;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}

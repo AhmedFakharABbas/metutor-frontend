@@ -1,0 +1,39 @@
+.welcome-block {
+  h1 {
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  p {
+    color: #7d7d7d;
+    font-size: 17px;
+  }
+
+  button {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 45px;
+    padding: 0 20px;
+  }
+}
+
+@media(max-width:767px) {
+  .welcome-block {
+    h1 {
+      font-size: 20px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    button {
+      font-size: 16px;
+    }
+  }
+}

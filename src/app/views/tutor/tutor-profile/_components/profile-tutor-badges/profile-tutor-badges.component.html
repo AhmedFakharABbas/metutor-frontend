@@ -1,0 +1,13 @@
+<div class="card badges">
+  <div class="card-body">
+    <h1 class="title">Tutor Badges</h1>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let badge of tutor?.badges">
+        <div class="item text-center">
+          <img [src]="badge?.icon_url" draggable="false" width="70" height="70" alt="">
+          <h3>{{ badge?.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="request-post-course">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>How request post a new course?</h1>
+        <p>
+          Explore more than 600 Experts in diffrent categories and languages
+        </p>
+      </div>
+
+      <div class="col-12 request-list">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let item of requestCoursesList">
+            <button mat-button class="w-100 text-left" [class.active]="step === ('STEP' + item?.id)"
+              (click)="step = ('STEP' + item?.id); selectedCourse = item">
+              <span class="d-block">{{ item?.step_number }}</span>
+              <strong>{{ item?.step_title }}</strong>
+            </button>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="row">
+            <div class="col-md">
+              <h3>{{ selectedCourse?.step_number }}</h3>
+              <h2>{{ selectedCourse?.step_title }}</h2>
+              <p>{{ selectedCourse?.step_content }}</p>
+              <button mat-flat-button color="primary">
+                Start tutoring now
+                <img src="assets/svg/arrow-left-line.svg" alt="">
+              </button>
+            </div>
+            <div class="col-md" *ngIf="selectedCourse?.tutorial_url">
+              <metutors-video-player [videoSrc]="selectedCourse?.tutorial_url">
+              </metutors-video-player>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

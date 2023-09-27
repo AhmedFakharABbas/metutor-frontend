@@ -1,0 +1,7 @@
+<metutors-explore-courses [filterForm]="filterForm" (submitFilters)="onFilter($event)"></metutors-explore-courses>
+<div class="container">
+  <metutors-available-courses [filterForm]="filterForm" [courses]="allCourses" [count]="count"
+    (submitFilters)="onFilter($event)">
+  </metutors-available-courses>
+</div>
+<metutors-academic-learning-environment></metutors-academic-learning-environment>

@@ -1,0 +1,41 @@
+<div class="d-flex min-h-100">
+  <div class="sidemenu">
+    <p class="text-uppercase" *ngIf="!loadingClassroom">{{ classroom?.name }}</p>
+    <div class="ph-row px-3 mb-2" *ngIf="loadingClassroom">
+      <div class="ph-col-8 big"></div>
+      <div class="ph-col-4 big empty"></div>
+    </div>
+
+    <ul class="list-unstyled m-0">
+      <li>
+        <div class="position-relative search-block">
+          <input type="text" placeholder="SEARCH">
+          <mat-icon>search</mat-icon>
+        </div>
+      </li>
+      <li>
+        <a [routerLink]="'/student/classroom/syllabus/' + id" routerLinkActive="active">
+          <span class="text-uppercase">Syllabus</span>
+        </a>
+      </li>
+      <!-- <li>
+        <a routerLink="/student/classroom/resources" routerLinkActive="active">
+          <span class="text-uppercase">Resources</span>
+        </a>
+      </li> -->
+      <li>
+        <a [routerLink]="'/student/classroom/classes-dashboard/' + id" routerLinkActive="active">
+          <span class="text-uppercase">Classes Dashboard</span>
+        </a>
+      </li>
+      <!-- <li>
+        <a routerLink="/student/classroom/support-ticket" routerLinkActive="active">
+          <span class="text-uppercase">Support ticket</span>
+        </a>
+      </li> -->
+    </ul>
+  </div>
+  <div class="flex-grow-1 overflow-auto">
+    <router-outlet></router-outlet>
+  </div>
+</div>

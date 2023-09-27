@@ -1,0 +1,84 @@
+:host ::ng-deep .loving-opportunities {
+  padding: 80px 15px;
+  background-color: rgb(59 179 193 / 0.04);
+
+  .favorite {
+    color: #3bb3c1;
+    font-size: 40px;
+    width: 85px;
+    height: 85px;
+    margin-bottom: 40px;
+    background-color: rgb(59 179 193 / 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #1d293f;
+  }
+
+  button {
+    padding: 0;
+    min-width: 0;
+    float: right;
+
+    mat-icon {
+      font-size: 50px;
+      font-weight: normal;
+      color: #3bb3c1;
+      width: 50px;
+      height: 50px;
+
+      &.gray {
+        color: #e2e4e8;
+      }
+    }
+  }
+
+  .owl-carousel .owl-stage {
+    padding: 50px 0;
+  }
+
+  .card-item {
+    border-radius: 4px;
+    background-color: #FFF;
+    padding: 20px 0;
+    margin-right: 30px;
+    margin-left: 10px;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.22);
+
+    img.img-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .bio {
+      color: #696969;
+      font-size: 18px;
+      line-height: 1.4;
+      margin-top: 25px;
+      font-family: 'Proxima Nova';
+      margin: 20px 0 10px;
+    }
+
+    h3 {
+      color: #3bb3c1;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: 'Proxima Nova';
+    }
+  }
+}
+
+@media (max-width:767px) {
+
+  .loving-opportunities h1 {
+    font-size: 25px;
+  }
+}

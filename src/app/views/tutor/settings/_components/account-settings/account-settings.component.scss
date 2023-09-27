@@ -1,0 +1,70 @@
+.account-settings {
+  padding: 30px 0;
+
+  .avatar-block {
+    border-bottom: 1px solid #e0e0e0;
+    margin: 0 20px 20px 0;
+
+    .person {
+      background-color: rgb(34 34 34 / 8%);
+      color: #2a2a2a;
+      width: 60px;
+      height: 60px;
+      font-size: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    h2 {
+      color: #000;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h5 {
+      color: #7d7d7d;
+      font-size: 12px;
+    }
+
+    button {
+      color: #000;
+      background-color: #f8f8f8;
+
+      mat-icon {
+        width: 15px;
+        height: 15px;
+        font-size: 15px;
+        color: #5D5D5D;
+      }
+    }
+  }
+
+  h3 {
+    color: #2a2a2a;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  input {
+    color: #7d7d7d;
+    font-size: 13px;
+    border: solid 1px #e0e0e0;
+    background-color: #ffffff;
+    height: 45px;
+  }
+
+  .btn-list {
+    border-top: solid 1px #e2e2e2;
+    padding: 20px 20px 0;
+    margin-left: -30px;
+
+    button {
+      font-weight: bold;
+      padding: 10px 30px;
+      font-size: 18px;
+    }
+  }
+}

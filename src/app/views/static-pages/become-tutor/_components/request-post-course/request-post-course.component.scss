@@ -1,0 +1,91 @@
+:host ::ng-deep .request-post-course {
+  padding: 80px 15px;
+  background-color: rgb(59 179 193 / 0.04);
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+  }
+
+  p {
+    font-size: 20px;
+    color: #949494;
+    margin-bottom: 50px;
+  }
+
+  .request-list {
+    button {
+      padding: 10px 20px;
+      border-radius: 4px 4px 0 0;
+
+      span {
+        color: #3bb3c1;
+      }
+
+      strong {
+        color: #2a2a2a;
+      }
+
+      &.active {
+        background-color: #FFF;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          background: #3bb3c1;
+          bottom: 0;
+          width: 50%;
+          left: 0;
+        }
+      }
+    }
+
+    .videoplayer {
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .steps {
+      padding: 50px 20px;
+      background-color: #FFF;
+      border-radius: 0 0 8px 8px;
+
+      h3 {
+        color: #3bb3c1;
+        margin-bottom: 5px;
+      }
+
+      h2 {
+        color: #183b56;
+        font-size: 25px;
+        font-weight: normal;
+      }
+
+      p {
+        color: #696969;
+        line-height: 1.65;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      button {
+        span {
+          color: #FFF;
+          font-weight: bold;
+          font-size: 15px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:767px) {
+
+  .request-post-course h1,
+  .creativity h1 {
+    font-size: 25px;
+  }
+}

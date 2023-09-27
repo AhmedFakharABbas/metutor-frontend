@@ -1,0 +1,103 @@
+.profile-header {
+  border-radius: 15px;
+  background-color: #FFF;
+  border: solid 1px #e2e2ea;
+  overflow: hidden;
+
+  .cover {
+    height: 260px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .avatar-name {
+    margin-top: -130px;
+    padding: 0 30px;
+    color: #FFF;
+
+    .img-status {
+      width: 160px;
+      height: 160px;
+
+      img {
+        width: 160px;
+        height: 160px;
+        background-color: #F8F8F8;
+      }
+    }
+
+    .status {
+      right: 5px;
+      bottom: 25px;
+
+      &.is-online circle {
+        fill: #00ab1e;
+      }
+
+      &.is-offline circle {
+        fill: #949494;
+      }
+
+      &.is-busy circle {
+        fill: #ad0909;
+      }
+
+      &.is-away circle {
+        fill: #da9312;
+      }
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FFF;
+    }
+
+    h4 {
+      color: #d5d5dc;
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+
+  .details {
+    padding: 0 30px 15px;
+
+    ul li {
+      margin-right: 30px;
+
+      strong {
+        color: #171725;
+        font-size: 18px;
+      }
+
+      .count {
+        color: #ff8300;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .review {
+        color: #7d7d7d;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .actions {
+    .start-btn {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .more {
+      color: #000;
+      padding: 0 5px;
+      min-width: 0;
+      border: 1px solid #dcdcdc;
+      margin-left: 5px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

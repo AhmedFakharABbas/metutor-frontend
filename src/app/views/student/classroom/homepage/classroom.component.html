@@ -1,0 +1,58 @@
+<div class="classroom">
+  <div class="row">
+    <div class="col-12">
+      <button mat-flat-button color="primary" class="class-btn text-uppercase">All Courses</button>
+      <button mat-button class="class-btn text-uppercase main-button-transparent">Prep Admission Courses</button>
+      <button mat-button class="class-btn text-uppercase main-button-transparent">Language Courses</button>
+      <button mat-button class="class-btn text-uppercase main-button-transparent">Academic Courses </button>
+    </div>
+    <div class="col-12">
+      <h2 class="title cursor-pointer d-flex align-items-center" (click)="openActive = !openActive">
+        <span class="flex-grow-1">Active courses</span>
+        <img src="assets/svg/arrow-up.svg" [class.rotate-180]="openActive" draggable="false" width="30px" height="30"
+          alt="" />
+      </h2>
+      <div class="row" [@slideInOut] *ngIf="openActive">
+        <ng-container *ngIf="!isLoading">
+          <div class="col-md-12 mb-3" *ngFor="let classroom of activeClassrooms">
+            <metutors-classroom-item [classroom]="classroom"></metutors-classroom-item>
+          </div>
+
+          <div class="col-md-12 mb-3" *ngIf="!activeClassrooms || !activeClassrooms.length">
+            <h3 class="text-center no-data">No courses found!</h3>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="isLoading">
+          <div class="col-md-12" *ngFor="let _ of [1, 2]">
+            <metutors-classroom-placeholder></metutors-classroom-placeholder>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h2 class="title cursor-pointer d-flex align-items-center" (click)="openCompleted = !openCompleted">
+        <span class="flex-grow-1">Completed Courses</span>
+        <img src="assets/svg/arrow-up.svg" [class.rotate-180]="openCompleted" draggable="false" width="30px" height="30"
+          alt="" />
+      </h2>
+      <div class="row" [@slideInOut] *ngIf="openCompleted">
+        <ng-container *ngIf="!isLoading">
+          <div class="col-md-12 mb-3" *ngFor="let classroom of completedClassrooms">
+            <metutors-classroom-item [classroom]="classroom"></metutors-classroom-item>
+          </div>
+          <div class="col-md-12 mb-3" *ngIf="!completedClassrooms || !completedClassrooms.length">
+            <h3 class="text-center no-data">No courses found!</h3>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="isLoading">
+          <div class="col-md-12" *ngFor="let _ of [1, 2]">
+            <metutors-classroom-placeholder></metutors-classroom-placeholder>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

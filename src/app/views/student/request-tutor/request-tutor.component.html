@@ -1,0 +1,102 @@
+<div class="container request-tutor">
+  <h1>Request Academic Tutoring</h1>
+  <mat-horizontal-stepper labelPosition="bottom" linear #stepper>
+    <mat-step [stepControl]="courseInformationForm">
+      <form [formGroup]="courseInformationForm">
+        <ng-template matStepLabel>
+          <div class="title-info" [class.done]="courseInformationForm.valid">
+            <h3>
+              <ng-container *ngIf="courseInformationForm.invalid">01</ng-container>
+              <ng-container *ngIf="courseInformationForm.valid">
+                <mat-icon>check</mat-icon>
+              </ng-container>
+            </h3>
+            <h4>Step one</h4>
+            <h2>Course information</h2>
+          </div>
+        </ng-template>
+
+        <metutors-course-information-form [form]="courseInformationForm" [courseLevel]="courseLevel"
+          [courseField]="courseField" [languages]="languages" [subjects]="subjects" (submitForm)="nextStep()">
+        </metutors-course-information-form>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="classroomDetailsForm">
+      <form [formGroup]="classroomDetailsForm">
+        <ng-template matStepLabel>
+          <div class="title-info" [class.done]="classroomDetailsForm.valid">
+            <h3>
+              <ng-container *ngIf="classroomDetailsForm.invalid">02</ng-container>
+              <ng-container *ngIf="classroomDetailsForm.valid">
+                <mat-icon>check</mat-icon>
+              </ng-container>
+            </h3>
+            <h4>Step two</h4>
+            <h2>Classroom details</h2>
+          </div>
+        </ng-template>
+
+        <ureed-classroom-info-form [form]="classroomDetailsForm" [prices]="prices" (onBack)="backStep()"
+          (submitForm)="nextStep(); generateClassRooms()">
+        </ureed-classroom-info-form>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="classroomScheduleForm">
+      <form [formGroup]="classroomScheduleForm">
+        <ng-template matStepLabel>
+          <div class="title-info" [class.done]="classroomScheduleForm.valid">
+            <h3>
+              <ng-container *ngIf="classroomScheduleForm.invalid">03</ng-container>
+              <ng-container *ngIf="classroomScheduleForm.valid">
+                <mat-icon>check</mat-icon>
+              </ng-container>
+            </h3>
+            <h4>Step three</h4>
+            <h2>Classroom Schedule</h2>
+          </div>
+        </ng-template>
+
+        <metutors-list-classrooms-form [form]="classroomScheduleForm" [classrooms]="classrooms"
+          [loading]="loadingClassrooms" (onBack)="backStep()" (onNext)="nextStep()" (loadTutors)="loadTutors($event)">
+        </metutors-list-classrooms-form>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="selectTutorForm">
+      <form [formGroup]="selectTutorForm">
+        <ng-template matStepLabel>
+          <div class="title-info" [class.done]="selectTutorForm.valid">
+            <h3>
+              <ng-container *ngIf="selectTutorForm.invalid">04</ng-container>
+              <ng-container *ngIf="selectTutorForm.valid">
+                <mat-icon>check</mat-icon>
+              </ng-container>
+            </h3>
+            <h4>Step four</h4>
+            <h2>Select a tutor</h2>
+          </div>
+        </ng-template>
+
+        <metutors-select-tutor-form [form]="selectTutorForm" [loading]="loadingTutors" [tutors]="tutors"
+          (onBack)="backStep()" (submitForm)="nextStep()">
+        </metutors-select-tutor-form>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>
+        <div class="title-info">
+          <h3>05</h3>
+          <h4>Step five</h4>
+          <h2>Review your request</h2>
+        </div>
+      </ng-template>
+
+      <ureed-review-request [reviewInfo]="reviewInfo" [isCreatingCourse]="isCreatingCourse" (submitForm)="onSubmit()"
+        (onBack)="backStep()">
+      </ureed-review-request>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

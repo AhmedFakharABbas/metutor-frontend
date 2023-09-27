@@ -1,0 +1,23 @@
+<div class="confirm-block">
+  <h1 mat-dialog-title>
+    Hi {{ data.firstName }}
+
+    <button mat-button (click)="close()" class="close-btn">
+      <mat-icon>close</mat-icon>
+    </button>
+  </h1>
+  <div mat-dialog-content>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img src="assets/authentication/welcome.svg" alt="" draggable="false" width="70%" />
+        <h1 class="mt-4">Welcome to our platform</h1>
+        <p>Please verify your email address to can sign in the website</p>
+        <button mat-flat-button color="primary" class="mt-5 mb-3 resend-btn" (click)="resendEmailConfirm()"
+          [disabled]="isResend">
+          Re-send email verification
+          <mat-icon class="spinner" *ngIf="isResend">autorenew</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

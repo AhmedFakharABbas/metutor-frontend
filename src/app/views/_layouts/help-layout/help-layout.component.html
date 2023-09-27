@@ -1,0 +1,19 @@
+<div class="d-flex min-h-100">
+  <div class="sidemenu">
+    <ul class="list-unstyled m-0">
+      <li>
+        <a routerLink="/student/help/faq" routerLinkActive="active">
+          <span class="text-uppercase">FAQ</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/student/help/support-ticket" routerLinkActive="active">
+          <span class="text-uppercase">Support ticket</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex-grow-1 overflow-auto">
+    <router-outlet></router-outlet>
+  </div>
+</div>

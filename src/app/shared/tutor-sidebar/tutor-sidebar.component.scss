@@ -1,0 +1,68 @@
+.sidebar {
+  background-color: #131b33;
+  width: 340px;
+  padding: 20px 0 0;
+  overflow: auto;
+
+  &.has-sidemenu {
+    width: 80px;
+
+    .hide-sidemenu {
+      display: none;
+    }
+
+    ul li a,
+    .sidebar-logo {
+      padding: 15px 10px 25px;
+      text-align: center;
+    }
+  }
+
+  .sidebar-logo {
+    width: 100%;
+    padding: 15px 40px 35px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(226, 226, 226, 0.16);
+    text-align: center;
+  }
+
+  .add-course {
+    width: calc(100% - 80px);
+    margin: 0 auto 30px;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  ul li {
+    a {
+      color: #fff;
+      width: 100%;
+      padding: 15px 40px;
+      transition: all 0.25s ease-in-out;
+
+      &.active {
+        background-color: #1c2540e0;
+        border-left: 7px solid #3bb3c1;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  .help-settings {
+    border-top: 1px solid rgba(226, 226, 226, 0.16);
+    padding-top: 20px;
+  }
+
+  .logout {
+    background-color: rgba(226, 226, 226, 0.16);
+    padding: 10px;
+    font-size: 18px;
+    color: #FFF;
+    opacity: 0.8;
+  }
+}

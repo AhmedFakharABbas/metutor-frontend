@@ -1,0 +1,56 @@
+<div class="container invoice-details">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Invoice details</h2>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="title">Invoice details</h3>
+          <ul class="list-unstyled">
+            <li class="d-flex justify-content-between">
+              <span>Classroom</span>
+              <strong>$5.00</strong>
+            </li>
+            <li class="d-flex justify-content-between">
+              <span>Total Hours </span>
+              <strong>34 hours</strong>
+            </li>
+            <li class="d-flex justify-content-between">
+              <span>Total amount </span>
+              <strong>$170 USD</strong>
+            </li>
+            <li class="d-flex justify-content-between promocode">
+              <span>Promo code 20% off</span>
+              <strong>-70 USD</strong>
+            </li>
+            <li class="d-flex justify-content-between total-payment">
+              <span>Total payment</span>
+              <strong>$100.00</strong>
+            </li>
+            <li class="d-flex justify-content-between">
+              <span>Have a coupon ? </span>
+              <form>
+                <div class="d-flex have-coupon">
+                  <input type="text" placeholder="New2020" class="form-control">
+                  <button type="submit" mat-button>Apply</button>
+                </div>
+              </form>
+            </li>
+          </ul>
+          <div class="overflow-hidden">
+            <button mat-flat-button color="primary" class="float-right pay-now">
+              Pay now
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.172 10.9999H4V12.9999H16.172L10.808 18.3639L12.222 19.7779L20 11.9999L12.222 4.22192L10.808 5.63592L16.172 10.9999Z"
+                  fill="#FFF" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <metutors-classroom-details></metutors-classroom-details>
+    </div>
+  </div>
+</div>

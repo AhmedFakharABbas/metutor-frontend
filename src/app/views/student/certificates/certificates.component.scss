@@ -1,0 +1,103 @@
+.certificates {
+  padding: 20px 40px;
+
+  .title {
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    margin-bottom: 15px;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.12);
+
+    h1 {
+      color: #2a2a2a;
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #696969;
+      margin: 0;
+    }
+
+    .rating {
+      font-weight: bold;
+
+      .count {
+        color: #FF8E18;
+        font-weight: bold;
+        font-size: 15px;
+        margin-left: 10px;
+      }
+
+      .review {
+        color: #ff8300;
+        font-size: 14px;
+        margin-left: 5px;
+      }
+    }
+
+    .info {
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      h2 {
+        color: #2a2a2a;
+        font-size: 14px;
+        margin: 0;
+        font-weight: bold;
+
+        img {
+          width: 15px;
+          height: 15px;
+          margin-left: 5px;
+          border-radius: 0;
+        }
+
+        .count {
+          color: #FF8E18;
+          font-weight: bold;
+          font-size: 15px;
+          margin-left: 5px;
+        }
+      }
+
+      h3 {
+        color: #696969;
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+
+    .list {
+      margin-bottom: 20px;
+      padding: 5px;
+
+      .menu {
+        padding-right: 0;
+
+        img {
+          margin-right: 5px;
+        }
+
+        span {
+          color: #2a2a2a;
+          margin-left: 5px;
+          font-size: 14px;
+        }
+
+        strong {
+          font-size: 13px;
+          color: #696969;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

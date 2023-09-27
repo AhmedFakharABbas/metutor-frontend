@@ -1,0 +1,143 @@
+.signup-block {
+  form {
+    label {
+      color: #373737;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    h3 {
+      color: #696969;
+      letter-spacing: 1px;
+    }
+
+    h4 {
+      font-size: 35px;
+      line-height: 1.3;
+      color: #2a2a2a;
+    }
+
+    .types {
+      button {
+        background-color: #fff;
+        border: 1px solid #e2e2e2;
+        height: 70px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+
+        mat-icon {
+          margin-right: 10px;
+          background: rgb(226 226 226 / 0.5);
+          width: 50px;
+          height: 50px;
+          color: #000;
+          line-height: 50px;
+          text-align: center;
+        }
+
+        &.active {
+          border: 1px solid #3bb3c1;
+
+          mat-icon {
+            color: #3bb3c1;
+          }
+        }
+      }
+    }
+
+    button {
+      font-weight: bold;
+    }
+
+    .social {
+      button {
+        border: solid 1px #0077b7;
+        padding: 5px 15px 5px 15px;
+        font-weight: 500;
+
+        img {
+          margin-right: 5px;
+        }
+
+        &.google {
+          border-color: #eeeeee
+        }
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #696969;
+
+      a {
+        color: #3bb3c1;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .steps {
+    h2 {
+      color: #2a2a2a;
+      font-weight: normal;
+      font-size: 25px;
+    }
+
+    p {
+      color: #696969;
+      font-size: 15px;
+      line-height: 28px;
+    }
+
+    ul {
+      width: 80%;
+
+      li {
+        background: #FFF;
+        padding: 15px 25px;
+        margin-bottom: 15px;
+        border-left: 5px solid #e2e2e2;
+
+        span {
+          color: #3bb3c1;
+        }
+
+        h4 {
+          color: #2a2a2a;
+          margin: 0;
+          font-size: 17px;
+        }
+
+        &.active {
+          border-left: 5px solid #3bb3c1;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .signup-block {
+    form {
+      h3 {
+        font-size: 25px;
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 20px !important;
+      }
+
+      .types button {
+        margin-bottom: 15px;
+      }
+    }
+
+    .img-cover {
+      display: none !important;
+    }
+  }
+}

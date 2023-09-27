@@ -1,0 +1,28 @@
+.get-your-classes {
+  padding: 50px 0;
+  background-color: #fafafa;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+  }
+
+  h2 {
+    color: #2a2a2a;
+    font-size: 20px;
+  }
+
+  p.details {
+    margin: 0;
+    color: #696969;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width:767px) {
+  .get-your-classes h1 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="facts-statistics">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Our Facts & Statistics</h2>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+          literature</p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-3" *ngFor="let stat of statistics; let i = index">
+        <div class="card">
+          <div class="card-body">
+            <img [src]="stat?.icon" draggable="false" alt="" height="65" width="65">
+            <h3>{{ stat?.value }}</h3>
+            <h4>{{ stat?.type }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

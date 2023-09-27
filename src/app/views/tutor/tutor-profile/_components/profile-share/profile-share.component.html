@@ -1,0 +1,32 @@
+<div class="card share">
+  <div class="card-body">
+    <h1 class="title">Share this profile</h1>
+    <div>
+      <h2>To share this profile,share the link below:</h2>
+      <div class="position-relative">
+        <input type="text" #inputCloned [placeholder]="clientUrl + defaultUrl" [value]="clientUrl + defaultUrl"
+          class="form-control">
+        <img src="assets/svg/copy.svg" (click)="cloneText(inputCloned)" draggable="false" alt=""
+          class="position-absolute share-img">
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6 icon" shareButton="facebook" [url]="clientUrl + defaultUrl">
+          <img src="assets/svg/fb.svg" draggable="false" width="25" height="25" alt="">
+          <span>Facebook</span>
+        </div>
+        <div class="col-md-6 icon" shareButton="whatsapp" [url]="clientUrl + defaultUrl">
+          <img src="assets/svg/whatsapp.svg" draggable="false" width="25" height="25" alt="">
+          <span>Whatsapp</span>
+        </div>
+        <div class="col-md-6 icon" shareButton="twitter" [url]="clientUrl + defaultUrl">
+          <img src="assets/svg/tw.svg" draggable="false" width="25" height="25" alt="">
+          <span>Twitter</span>
+        </div>
+        <div class="col-md-6 icon" shareButton="linkedin" [url]="clientUrl + defaultUrl">
+          <img src="assets/svg/ln.svg" draggable="false" width="25" height="25" alt="">
+          <span>LinkedIn</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

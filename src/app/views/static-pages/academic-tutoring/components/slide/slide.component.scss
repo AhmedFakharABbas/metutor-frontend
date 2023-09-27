@@ -1,0 +1,56 @@
+.slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 90px 0;
+  margin: 0;
+
+  h1 {
+    color: #FFF;
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: normal;
+  }
+
+  p {
+    font-size: 24px;
+    color: #FFF;
+    margin-top: 30px;
+    line-height: 1.42;
+  }
+
+  button {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 8px 30px;
+  }
+
+  .overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background-color: #000000;
+
+  }
+}
+
+
+@media(max-width:767px) {
+  .slide {
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+
+    button {
+      font-size: 17px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div class="row courses" *ngIf="classroomsPrep && classroomsPrep.length">
+  <div class="col-md-7">
+    <h1>
+      Do you need to improve your
+      standardized test scores ?
+    </h1>
+  </div>
+  <div class="col-md-5">
+    <a mat-button class="main-button-transparent float-right" routerLink="/prep-college-admission-tests">
+      Find more courses
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.172 10.9999H4V12.9999H16.172L10.808 18.3639L12.222 19.7779L20 11.9999L12.222 4.22192L10.808 5.63592L16.172 10.9999Z"
+          fill="#3BB3C1" />
+      </svg>
+    </a>
+  </div>
+  <div class="col-12">
+    <p>
+      Improve your test scores and attend the college of your dreams! whether you prefer one-on-one instructions or
+      group classes, the experienced instructors at MEtutors will provide a learning environment that is sure
+      to produce unmatched results.
+    </p>
+  </div>
+  <div class="col-md-4" *ngFor="let classroom of classroomsPrep">
+    <metutors-course-item [classroom]="classroom"></metutors-course-item>
+  </div>
+</div>
+
+<div class="row courses" *ngIf="classroomsLang && classroomsLang.length">
+  <div class="col-md-7">
+    <h1>
+      Learn your favorite language from
+      highly-qualified native speakers
+    </h1>
+  </div>
+  <div class="col-md-5">
+    <a mat-button class="main-button-transparent float-right" routerLink="/languages-courses">
+      Find more courses
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.172 10.9999H4V12.9999H16.172L10.808 18.3639L12.222 19.7779L20 11.9999L12.222 4.22192L10.808 5.63592L16.172 10.9999Z"
+          fill="#3BB3C1" />
+      </svg>
+    </a>
+  </div>
+  <div class="col-12">
+    <p>
+      Instructors at MEtutors will guide you through your learning journey in courses customized to fit your individual
+      needs. One-on-one and group classes are available at special prices.
+    </p>
+  </div>
+
+  <div class="col-md-4" *ngFor="let classroom of classroomsLang">
+    <metutors-course-item [classroom]="classroom"></metutors-course-item>
+  </div>
+</div>

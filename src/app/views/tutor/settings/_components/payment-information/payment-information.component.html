@@ -1,0 +1,47 @@
+<form class="payment-information">
+  <div class="d-flex list-cards">
+    <div class="visa-card col" (click)="selectedCard = 'MASTER_VISA'" [class.active]="selectedCard === 'MASTER_VISA'">
+      <img src="assets/svg/checkbox-circle-fill-green.svg" draggable="false" width="20" height="20" alt=""
+        class="checked">
+      <img src="assets/payment/master-visa.png" draggable="false" alt="" class="logo">
+      <h4>Private Card</h4>
+    </div>
+    <div class="visa-card col" (click)="selectedCard = 'PAYONEER'" [class.active]="selectedCard === 'PAYONEER'">
+      <img src="assets/svg/checkbox-circle-fill-green.svg" draggable="false" width="20" height="20" alt=""
+        class="checked">
+      <img src="assets/payment/payoneer.png" draggable="false" alt="" class="logo">
+      <h4>Payoneer</h4>
+    </div>
+    <div class="visa-card col" (click)="selectedCard = 'PAYPAL'" [class.active]="selectedCard === 'PAYPAL'">
+      <img src="assets/svg/checkbox-circle-fill-green.svg" draggable="false" width="20" height="20" alt=""
+        class="checked">
+      <img src="assets/payment/paypal.png" draggable="false" alt="" class="logo">
+      <h4>PayPal</h4>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <h3>Card number</h3>
+      <input type="text" class="form-control" placeholder="0000  0000  0000  00000">
+    </div>
+    <div class="col-md-6">
+      <h3>Card hold name</h3>
+      <input type="text" class="form-control" placeholder="JOHN DEO">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <h3>Card expiration</h3>
+      <input type="text" class="form-control" placeholder="MM / YY">
+    </div>
+    <div class="col-md-6">
+      <h3>CVV</h3>
+      <input type="text" class="form-control" placeholder="000">
+    </div>
+  </div>
+  <div class="row btn-list mt-5">
+    <div class="col-12 d-flex justify-content-end">
+      <button mat-flat-button color="primary" type="submit">Update </button>
+    </div>
+  </div>
+</form>

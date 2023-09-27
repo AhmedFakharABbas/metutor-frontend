@@ -1,0 +1,21 @@
+<div class="row why-metutors">
+  <div class="col-md-12 text-center">
+    <h1>Why MEtutors</h1>
+    <p>
+      Explore more than 500 courses in different subjects languages and study fields.
+    </p>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-md-3 mb-4" *ngFor="let item of whyMeTutorsList">
+        <div class="card h-100">
+          <div class="card-body item d-flex align-items-center">
+            <img src="assets/svg/correct.svg" draggable="false" width="25" height="25" alt="">
+            <h2 class="mb-0">{{ item?.content_value }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

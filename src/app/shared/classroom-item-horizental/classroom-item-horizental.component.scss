@@ -1,0 +1,122 @@
+.classroom-item {
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.12);
+
+  .date {
+    background-color: rgba(59, 179, 193, 0.04);
+
+    h2 {
+      color: #696969;
+      font-size: 16px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 20px;
+      color: #2a2a2a;
+    }
+
+    h4 {
+      font-size: 15px;
+      color: #696969;
+    }
+  }
+
+  .price {
+    strong {
+      font-size: 16px;
+      color: #2a2a2a;
+    }
+  }
+
+  .card-title {
+    color: #2a2a2a;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .list {
+    padding: 5px;
+
+    .menu {
+      padding-right: 0;
+
+      img {
+        margin-right: 5px;
+      }
+
+      span {
+        color: #2a2a2a;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+
+      strong {
+        font-size: 16px;
+        color: #696969;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .count {
+    color: #FF8E18;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .review {
+    color: #949494;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .info {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    h2 {
+      color: #2a2a2a;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    h3 {
+      color: #696969;
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+
+  .details-btn {
+    color: #3bb3c1;
+    padding: 2px 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid #e2e2e2;
+    transition: all 0.25s ease-in-out;
+    margin-right: 10px;
+
+    &:hover {
+      background-color: #3bb3c1;
+      color: #FFF;
+    }
+  }
+
+  .book-classroom {
+    font-weight: bold;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background-color: #2a2a2a;
+      color: #FFF;
+    }
+  }
+}

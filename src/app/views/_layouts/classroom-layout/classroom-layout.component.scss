@@ -1,0 +1,46 @@
+.sidemenu {
+  padding: 50px 0;
+  background: #2d3E49;
+
+  p {
+    width: 260px;
+    color: #FFF;
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  ul li {
+    width: 260px;
+    a {
+      display: block;
+      color: #ffffff;
+      font-size: 17px;
+      padding: 15px;
+      border-bottom: 1px solid rgba(226, 226, 226, 0.16);
+
+      &.active {
+        border-right: 6px solid #3bb3c1;
+        font-weight: bold;
+      }
+    }
+
+    .search-block {
+      input {
+        width: 100%;
+        outline: none;
+        border: none;
+        border-top: 1px solid rgba(226, 226, 226, 0.16);
+        background: transparent;
+        border-bottom: 1px solid rgba(226, 226, 226, 0.16);
+        padding: 15px;
+        color: #f9f9f9;
+      }
+
+      mat-icon {
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 12px);
+      }
+    }
+  }
+}

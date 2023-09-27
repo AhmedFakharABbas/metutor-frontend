@@ -1,0 +1,86 @@
+<div class="card course-item">
+  <img [src]="classroom?.course?.picture" meTutorsDefaultCourse class="card-img-top" alt>
+  <label class="badge-item" [ngClass]="{
+    'popular': classroom?.course?.tag === courseTags.pop,
+    'new': classroom?.course?.tag === courseTags.new,
+    'top': classroom?.course?.tag === courseTags.top
+  }">{{ classroom?.course?.tag }}</label>
+  <div class="card-body px-2 py-3">
+    <h5 class="card-title">
+      {{ classroom?.course?.name }}
+      <img src="assets/svg/user-one.svg" draggable="false" *ngIf="classroom?.course?.tuitionType === tuitionType.one"
+        width="25px" height="25px" />
+      <img src="assets/svg/user-group.svg" draggable="false"
+        *ngIf="classroom?.course?.tuitionType === tuitionType.group" width="25px" height="25px" />
+      <img src="assets/svg/user-both.svg" matTooltip="One-o-One" matTooltipPosition="above" draggable="false"
+        *ngIf="classroom?.course?.tuitionType === tuitionType.both" height="25px" />
+    </h5>
+    <div>
+      <rating [ngModel]="classroom?.course?.rate" max="5" [readonly]="true"></rating>
+      <span class="count" *ngIf="classroom?.course?.rate">{{ classroom?.course?.rate }}</span>
+      <span class="review" *ngIf="classroom?.course?.reviewsCount">({{ classroom?.course?.reviewsCount }} review)</span>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6 d-flex menu align-items-center" *ngIf="classroom?.startDate">
+        <img src="assets/svg/timer.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Start date:</strong>
+        <span>{{ classroom?.startDate | date:'d/MM/yy' }}</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center" *ngIf="classroom?.expectedEndDate">
+        <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+        <strong>End date:</strong>
+        <span>{{ classroom?.expectedEndDate | date:'d/MM/yy' }}</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center" *ngIf="classroom?.totalHours">
+        <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Total hour:</strong>
+        <span>{{ classroom?.totalHours }}hrs</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center" *ngIf="classroom?.maxStudentsGroup">
+        <img src="assets/svg/students.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Max students:</strong>
+        <span>{{ classroom?.maxStudentsGroup }}</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center" *ngIf="classroom?.totalClasses">
+        <img src="assets/svg/class.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Classes:</strong>
+        <span>{{ classroom?.totalClasses }}</span>
+      </div>
+      <div class="col-md-6 d-flex menu align-items-center" *ngIf="classroom?.listDays && classroom?.listDays.length">
+        <img src="assets/svg/calendar.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Days:</strong>
+        <span>
+          <ng-container *ngFor="let day of classroom?.listDays; let isLast = last">
+            {{ day }}
+            <ng-container *ngIf="!isLast">, </ng-container>
+          </ng-container>
+        </span>
+      </div>
+      <div class="col d-flex menu align-items-center" *ngIf="classroom?.startTime">
+        <img src="assets/svg/timer.svg" alt="" width="15" height="15" draggable="false">
+        <strong>Time:</strong>
+        <span>{{ classroom?.startTime }}</span>
+      </div>
+    </div>
+    <div class="row info mt-3" *ngIf="classroom?.tutor">
+      <div class="col-md-2 d-flex align-items-center">
+        <img [src]="classroom?.tutor?.avatar" meTutorsDefaultAvatar alt="">
+      </div>
+      <div class="col-md-10 d-flex justify-content-center flex-column">
+        <h2>{{ classroom?.tutor?.name }}</h2>
+        <h3>{{ classroom?.tutor?.major }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex align-items-center mt-4 actions">
+        <h3 class="m-0" *ngIf="classroom?.price">Price: <strong>{{ classroom?.price | currency:'USD' }}</strong></h3>
+        <button mat-flat-button color="primary" class="flex-grow-1 start-btn">
+          Book a Class
+        </button>
+        <button mat-button class="more">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

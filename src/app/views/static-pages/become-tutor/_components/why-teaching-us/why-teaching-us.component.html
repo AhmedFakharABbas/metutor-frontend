@@ -1,0 +1,23 @@
+<div class="why-teaching-us" style="background-image: url(assets/homepage/oval.svg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Why teching with Us</h1>
+
+        <p>
+          Explore more than 500 courses in different
+          subjects languages and study fields.
+        </p>
+        <ul class="list-unstyled row">
+          <li class="col-md-6" *ngFor="let item of whyTeachingUsList">
+            <img src="assets/svg/correct.svg" alt="">
+            <span>{{ item?.content_value }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-5">
+        <img src="assets/about/users.png" height="450px" alt="" class="contact-img" draggable="false">
+      </div>
+    </div>
+  </div>
+</div>

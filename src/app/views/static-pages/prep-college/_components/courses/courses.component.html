@@ -1,0 +1,28 @@
+<div class="row courses">
+  <div class="col-md-7">
+    <h1>
+      Learn your favorite language from
+      highly-qualified native speakers
+    </h1>
+  </div>
+  <div class="col-md-5">
+    <a mat-button class="main-button-transparent float-right" [routerLink]="'/all-courses/' + category?.id">
+      Find more courses
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16.172 10.9999H4V12.9999H16.172L10.808 18.3639L12.222 19.7779L20 11.9999L12.222 4.22192L10.808 5.63592L16.172 10.9999Z"
+          fill="#3BB3C1" />
+      </svg>
+    </a>
+  </div>
+  <div class="col-12 mb-4">
+    <p>
+      Improve your test scores and attend the college of your dreams! whether you prefer one-on-one instructions or
+      group classes,
+    </p>
+  </div>
+
+  <div class="col-md-12 mb-3" *ngFor="let course of courses">
+    <metutors-course-item-horizental [course]="course"></metutors-course-item-horizental>
+  </div>
+</div>

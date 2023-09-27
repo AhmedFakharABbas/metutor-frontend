@@ -1,0 +1,159 @@
+<div class="dashboard">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="overview">Overview</h2>
+      <p class="desc">
+        See insights on how your Progress has changed from <strong>March 26 - April 26</strong>
+      </p>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+  <div class="row list-cards">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body d-flex flex-column">
+          <h3>Overall Progress</h3>
+          <h1 class="flex-grow-1">
+            54%
+            <span>+2.5%</span>
+          </h1>
+          <p>Compared to (77% last Month)</p>
+          <mat-progress-bar class="example-margin" [color]="'primary'" [value]="'80'">
+          </mat-progress-bar>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card orange-bo">
+        <div class="card-body d-flex flex-column">
+          <h3>Total Completed Courses</h3>
+          <h1 class="flex-grow-1">
+            20
+            <span>+0.5%</span>
+          </h1>
+          <p>Compared to 9 courses Last Month</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card red-bo">
+        <div class="card-body d-flex flex-column">
+          <h3>Attendence rate</h3>
+          <h1 class="flex-grow-1">
+            %50
+            <span class="danger">-1.5%</span>
+          </h1>
+          <p>Compared to (%65 last month)</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card purple-bo">
+        <div class="card-body d-flex flex-column">
+          <h3>Total payment</h3>
+          <h1 class="flex-grow-1">
+            $126
+            <span>+2.5%</span>
+          </h1>
+          <p>Compared to ($105 last month)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3 class="overview mb-3">Today's Classes - 21 March 2020 [SUNDAY]</h3>
+      <table class="table my-table">
+        <tr>
+          <th>#</th>
+          <th>Classroom Subject</th>
+          <th>Classroom tutor</th>
+          <th>Start time - End time</th>
+          <th>Duration</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>01</td>
+          <td>Design homepage for …</td>
+          <td>Mark Walters</td>
+          <td>07:10 PM - 09:40 PM </td>
+          <td>2 hours</td>
+          <td>
+            <button mat-button>View Class</button>
+          </td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Design homepage for …</td>
+          <td>Mark Walters</td>
+          <td>07:10 PM - 09:40 PM </td>
+          <td>2 hours</td>
+          <td>
+            <button mat-button>View Class</button>
+          </td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Design homepage for …</td>
+          <td>Mark Walters</td>
+          <td>07:10 PM - 09:40 PM </td>
+          <td>2 hours</td>
+          <td>
+            <button mat-button>View Class</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="overview mt-5">Completed courses</h2>
+      <p class="desc">Quickly see Completed courses from <strong>March 26 - April 26</strong></p>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide *ngFor="let _ of [1,2,3,4,5]">
+              <div class="row card-item">
+                <div class="col-md-4">
+                  <img
+                    src="https://s3-alpha-sig.figma.com/img/269d/54ad/36977821643702b5b2e97df0893659c0?Expires=1614556800&Signature=Fka2HrkrZ~dxc1kcr7YGC9QKkpRJIWxZHnMtdltQHcItVDsVdKJahnUEWMcYJcD~DWUzw6Vec8m0eUJVuRpQuvm~iaiB0PeZB1DvjxXYh5fCDe8tPP4~l1xPgFVvJv7KqKOygXneIm07TEWldKiCjRgj2v1Py~EuywmuXTYGvpwpGflKuwNvedALJqf75TaQzJh6QsKSM9ZqpyUJ~w4hMwctYsfUcZM2uTeQ3Uzr92~DR5Ii5-V4mi54eVILLFboMcPFXgthOo7B47-jjTjp5-Zj4fENN0PEXYe5yDIjzA3XqFfRYTfLSpNoR4tfaqMJBeNvKHlu5C6qSnWiWfmL9g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    alt="" class="rounded" width="100%">
+                </div>
+                <div class="col-md-8">
+                  <h1>Python for Data Science and technology Python for Data Science and technology</h1>
+                  <!-- <rating [(ngModel)]="rate" max="5" [readonly]="true"></rating> -->
+                  <div>
+                    <rating [(ngModel)]="rate" max="5" [readonly]="true"></rating>
+                    <span class="count">4.5</span>
+                    <span class="review">(30 review)</span>
+                  </div>
+                  <h3 class="mt-2">100% Completed</h3>
+                  <mat-progress-bar class="example-margin" [color]="'primary'" [value]="'100'">
+                  </mat-progress-bar>
+                  <div class="row mt-3">
+                    <div class="col-md-4">
+                      <h5>Total hours</h5>
+                      <h4 class="m-0">30 Hours</h4>
+                    </div>
+                    <div class="col-md-4">
+                      <h5>Total Classes</h5>
+                      <h4 class="m-0">30</h4>
+                    </div>
+                    <div class="col-md-4">
+                      <h5>Study type:</h5>
+                      <h4 class="m-0">Groups</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

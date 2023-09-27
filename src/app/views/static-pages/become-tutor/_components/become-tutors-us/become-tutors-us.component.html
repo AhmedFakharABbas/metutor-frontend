@@ -1,0 +1,45 @@
+<div class="row study-metutors">
+  <div class="col-md-12 text-center">
+    <h1>Why Become a Tutor with Us?</h1>
+    <p>
+      Explore more than 500 courses in different subjects, languages and study fields.
+    </p>
+  </div>
+
+  <div class="col-12" *ngIf="becomeTutors">
+    <div class="row">
+      <div class="col-md-4 item">
+        <div class="card text-center">
+          <div class="card-body">
+            <img src="assets/svg/person.svg" meTutorsDefaultAvatar alt="" draggable="false" width="75px" height="75" />
+
+            <h2>{{ becomeTutors?.title_left }}</h2>
+            <h4>{{ becomeTutors?.content_left }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 item">
+        <div class="card text-center">
+          <div class="card-body">
+            <img src="assets/svg/verify.svg" alt="" draggable="false" width="75px" height="75" />
+
+            <h2>{{ becomeTutors?.title_center }}</h2>
+            <h4>{{ becomeTutors?.content_center }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 item">
+        <div class="card text-center">
+          <div class="card-body">
+            <img src="assets/svg/planet.svg" alt="" draggable="false" width="75px" height="75" />
+
+            <h2>{{ becomeTutors?.title_right }}</h2>
+            <h4>{{ becomeTutors?.content_right }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

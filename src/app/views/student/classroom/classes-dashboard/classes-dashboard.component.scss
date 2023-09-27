@@ -1,0 +1,59 @@
+.classes-dashboard {
+  .card {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 13%);
+
+    .title {
+      color: #000;
+      font-size: 30px;
+    }
+
+    .in-progress {
+      h3 {
+        font-size: 12px;
+        color: #000;
+      }
+
+      strong {
+        color: #000;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+
+    .list {
+      padding: 5px;
+
+      .menu {
+        padding-right: 0;
+        margin-top: 10px;
+
+        img {
+          margin-right: 5px;
+        }
+
+        span {
+          color: #2a2a2a;
+          margin-left: 5px;
+          font-size: 14px;
+        }
+
+        strong {
+          font-size: 16px;
+          color: #696969;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .list-tables {
+    padding: 45px 40px;
+
+    .overview {
+      color: #2a2a2a;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+  }
+}

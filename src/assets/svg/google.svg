@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <g>
+                <g>
+                    <g>
+                        <path fill="#FBBD00" d="M5.625 12c0-1.19.328-2.303.897-3.257V4.698H2.476C.87 6.783 0 9.324 0 12c0 2.676.87 5.217 2.476 7.302h4.046v-4.045c-.57-.954-.897-2.068-.897-3.257z" transform="translate(-230 -751) translate(-1 89) translate(211 650) translate(20 12)"/>
+                        <path fill="#0F9D58" d="M12 18.375l-2.813 2.813L12 24c2.676 0 5.217-.87 7.302-2.476v-4.041h-4.041c-.962.57-2.08.892-3.261.892z" transform="translate(-230 -751) translate(-1 89) translate(211 650) translate(20 12)"/>
+                        <path fill="#31AA52" d="M6.522 15.257l-4.046 4.045c.318.413.664.809 1.039 1.183C5.78 22.752 8.795 24 12 24v-5.625c-2.326 0-4.365-1.253-5.478-3.118z" transform="translate(-230 -751) translate(-1 89) translate(211 650) translate(20 12)"/>
+                        <path fill="#3C79E6" d="M24 12c0-.73-.066-1.462-.197-2.174l-.105-.576H12v5.625h5.693c-.553 1.1-1.403 1.997-2.432 2.608l4.041 4.041c.413-.318.809-.664 1.183-1.039C22.752 18.22 24 15.205 24 12z" transform="translate(-230 -751) translate(-1 89) translate(211 650) translate(20 12)"/>
+                        <path fill="#CF2D48" d="M16.508 7.492l.497.497 3.977-3.977-.497-.497C18.22 1.248 15.205 0 12 0L9.187 2.813 12 5.624c1.703 0 3.304.663 4.508 1.867z" transform="translate(-230 -751) translate(-1 89) translate(211 650) translate(20 12)"/>
+                        <path fill="#EB4132" d="M12 5.625V0C8.795 0 5.781 1.248 3.515 3.515c-.375.374-.721.77-1.039 1.183l4.046 4.045C7.635 6.878 9.674 5.625 12 5.625z" transform="translate(-230 -751) translate(-1 89) translate(211 650) translate(20 12)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

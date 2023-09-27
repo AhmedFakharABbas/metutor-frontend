@@ -1,0 +1,71 @@
+.payment-information {
+  padding: 30px 15px 30px 0;
+
+  .list-cards {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+    .visa-card {
+      border-right: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 40px 10px;
+      cursor: pointer;
+
+      &.active {
+        background-color: rgba(59, 179, 193, 0.1);
+
+        .checked {
+          display: inline-block;
+        }
+      }
+
+      .logo {
+        height: 45px;
+      }
+
+      .checked {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        display: none;
+      }
+
+      h4 {
+        font-size: 18px;
+        color: #000;
+        margin: 10px 0;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  h3 {
+    color: #2a2a2a;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  input {
+    color: #7d7d7d;
+    font-size: 13px;
+    border: solid 1px #e0e0e0;
+    background-color: #ffffff;
+    height: 45px;
+  }
+
+  .btn-list {
+    border-top: solid 1px #e2e2e2;
+    padding: 20px 20px 0;
+    margin-left: -30px;
+
+    button {
+      font-weight: bold;
+      padding: 10px 30px;
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<div class="my-tickets">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <h2 class="title">My Tickets</h2>
+      <a mat-flat-button color="primary" routerLink="/student/help/support-ticket/create-ticket">Create new ticket</a>
+    </div>
+    <div class="col-12">
+      <div class="card" *ngFor="let ticket of listTickets">
+        <div class="card-body">
+          <h2>
+            <a [routerLink]="'/student/help/support-ticket/ticket-details/' + ticket?.id">{{ ticket?.title }}</a>
+            <span class="label" [ngClass]="{
+                  'new': ticketStatus.new === ticket?.status,
+                  'issued': ticketStatus.open === ticket?.status,
+                  'closed': ticketStatus.closed === ticket?.status,
+                  'response': ticketStatus.reopened === ticket?.status
+            }">{{ ticket?.statusValue }}</span>
+          </h2>
+          <p>
+            {{ ticket?.description }}
+          </p>
+          <div class="row list">
+            <div class="col-md-2 d-flex menu align-items-center" *ngIf="ticket?.assignedEmployee">
+              <img src="assets/homepage/courses/person.png" meTutorsDefaultAvatar alt="" width="25" height="25"
+                draggable="false">
+              <strong>Agent: {{ ticket?.assignedEmployee?.official_name }}</strong>
+            </div>
+            <div class="col-md-2 d-flex menu align-items-center">
+              <img src="assets/svg/calendar.svg" alt="" width="15" height="15" draggable="false">
+              <span>Open : {{ ticket?.createdDate | date: 'EEEE, d MMM y' }}</span>
+            </div>
+            <!-- <div class="col-md-2 d-flex menu align-items-center">
+              <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+              <span>Last reply : 06:40 pm</span>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

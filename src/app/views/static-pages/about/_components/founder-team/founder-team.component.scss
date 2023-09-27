@@ -1,0 +1,57 @@
+.founder-team {
+  margin-top: 80px;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+  }
+
+  p {
+    font-size: 20px;
+    color: #949494;
+    margin-bottom: 50px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px 0 rgb(15 24 44 / 15%);
+  }
+
+  h2 {
+    color: #2a2a2a;
+    font-size: 27px;
+    margin: 30px 0 10px;
+  }
+
+  h3 {
+    color: #2a2a2a;
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media (max-width:767px) {
+  .founder-team {
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+
+    h2 {
+      margin: 10px 0;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}

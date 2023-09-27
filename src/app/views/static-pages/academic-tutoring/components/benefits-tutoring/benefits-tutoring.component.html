@@ -1,0 +1,24 @@
+<div class="row benefits-tutoring">
+  <div class="col-md-5">
+    <h2>Benefits of academic tutoring</h2>
+  </div>
+  <div class="col-md-7">
+    <h4>simply dummy text of the printing and typesetting industry. Lorem Ipsum
+      has been the industry's standard dummy text ever</h4>
+  </div>
+  <div class="col-12 mt-5 d-none d-sm-block"></div>
+  <div class="col-md-5">
+    <ul class="list-unstyled mt-5" *ngIf="academicTutoringBenefits && academicTutoringBenefits.length">
+      <li class="d-flex align-items-center" [class.mt-5]="i !== 0"
+        *ngFor="let benefit of academicTutoringBenefits; let i = index">
+        <img [src]="benefit?.icon" width="55px" height="55px" draggable="false" alt="">
+        <p class="details ml-2 mb-0">
+          {{ benefit?.content_value }}
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-7 text-center">
+    <img src="assets/academic/graph.png" class="graph" draggable="false" width="100%" alt="">
+  </div>
+</div>

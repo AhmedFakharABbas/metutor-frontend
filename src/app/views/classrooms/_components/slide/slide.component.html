@@ -1,0 +1,47 @@
+<div class="classrooms-slide">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="card-title">
+          {{ course?.name }}
+          <img src="assets/svg/user-one.svg" draggable="false" *ngIf="course?.tuitionType === tuitionType.one"
+            width="25px" height="25px" />
+          <img src="assets/svg/user-group.svg" draggable="false" *ngIf="course?.tuitionType === tuitionType.group"
+            width="25px" height="25px" />
+          <img src="assets/svg/user-both.svg" matTooltip="One-o-One" matTooltipPosition="above" draggable="false"
+            *ngIf="course?.tuitionType === tuitionType.both" height="25px" />
+        </h5>
+        <div>
+          <rating [ngModel]="course?.rate" max="5" [readonly]="true"></rating>
+          <span class="count">{{ course?.rate }}</span>
+          <span class="review">({{ course?.reviewsCount }} review)</span>
+        </div>
+        <p class="desc flex-grow-1" [innerHTML]="course?.description"></p>
+        <div class="row list rounded">
+          <div class="col-md-4 d-flex menu align-items-center">
+            <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+            <strong>Total hour:</strong>
+            <span>{{ course?.duration }}hrs</span>
+          </div>
+          <div class="col-md-4 d-flex menu align-items-center">
+            <img src="assets/svg/students.svg" alt="" width="15" height="15" draggable="false">
+            <strong>Total classroom:</strong>
+            <span>{{ course?.classroomNumber }}</span>
+          </div>
+          <div class="col-md-4 d-flex menu align-items-center">
+            <img src="assets/svg/class.svg" alt="" width="15" height="15" draggable="false">
+            <strong>Study type:</strong>
+            <span>{{ course?.tuitionValue }}</span>
+          </div>
+        </div>
+
+        <a mat-flat-button class="mt-4" color="primary" [routerLink]="'/classrooms/customize/' + course?.id">
+          Customize your classroom
+        </a>
+      </div>
+      <div class="col-md-6">
+        <img [src]="course?.picture" meTutorsDefaultCourse class="rounded" alt="" width="100%" draggable="false" />
+      </div>
+    </div>
+  </div>
+</div>

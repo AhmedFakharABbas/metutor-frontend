@@ -1,0 +1,116 @@
+<div class="course-details-popup">
+  <div class="d-flex" mat-dialog-title>
+    <h2 class="flex-grow-1 m-0 d-flex flex-column">
+      Course details
+      <span class="d-block mt-2">View classroom details</span>
+    </h2>
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="pt-2">
+    <div class="row list-videos">
+      <div class="col-12">
+        <h5 class="card-title">
+          {{ course?.name }}
+          <img src="assets/svg/user-one.svg" draggable="false" *ngIf="course?.tuitionType === tuitionType.one"
+            width="25px" height="25px" />
+          <img src="assets/svg/user-group.svg" draggable="false" *ngIf="course?.tuitionType === tuitionType.group"
+            width="25px" height="25px" />
+          <img src="assets/svg/user-both.svg" matTooltip="One-o-One" matTooltipPosition="above" draggable="false"
+            *ngIf="course?.tuitionType === tuitionType.both" height="25px" />
+        </h5>
+        <p class="desc flex-grow-1" [innerHTML]="course?.description"></p>
+      </div>
+      <div class="col-12">
+        <div class="row list rounded">
+          <div class="col-md-4 d-flex menu align-items-center">
+            <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+            <strong>Total hours:</strong>
+            <span>{{ course?.duration }} hours</span>
+          </div>
+          <div class="col-md-4 d-flex menu align-items-center">
+            <img src="assets/svg/class.svg" alt="" width="15" height="15" draggable="false">
+            <strong>Total classroom:</strong>
+            <span>{{ course?.classroomNumber }}</span>
+          </div>
+          <div class="col-md-4 d-flex menu align-items-center">
+            <img src="assets/svg/user-formal.svg" alt="" width="15" height="15" draggable="false">
+            <strong>Study type:</strong>
+            <span>{{ course?.tuitionValue }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card video" *ngFor="let video of listVideos; let i = index">
+          <div class="card-body">
+            <div class="d-flex align-items-center cursor-pointer title"
+              [class.open]="openVideo && selectedVideo === video.id" (click)="changeOpenSelection(video.id)">
+              <h1 class="flex-grow-1 m-0">
+                {{ i + 1 }}. {{ video.title }}
+              </h1>
+              <h3 class="m-0">
+                Total classes: <strong>{{ video.totalClasses }}</strong>
+              </h3>
+              <h3 class="m-0">
+                Duration : <strong>{{ video.duration }}</strong>
+              </h3>
+              <button mat-button *ngIf="selectedVideo !== video.id">
+                <mat-icon>expand_more</mat-icon>
+              </button>
+              <button mat-button *ngIf="openVideo && selectedVideo === video.id">
+                <mat-icon>expand_less</mat-icon>
+              </button>
+            </div>
+            <div class="table-responsive" *ngIf="openVideo && selectedVideo === video.id" [@slideInOut]>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Classroom subject</th>
+                    <th scope="col">Start time</th>
+                    <th scope="col">End Time</th>
+                    <th scope="col">Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">1.1</td>
+                    <td>Friday</td>
+                    <td>23 Feb 2020</td>
+                    <td>Introduction </td>
+                    <td>8:00 pm </td>
+                    <td>10:00pm </td>
+                    <td>2hrs </td>
+                  </tr>
+                  <tr>
+                    <td scope="row">1.1</td>
+                    <td>Friday</td>
+                    <td>23 Feb 2020</td>
+                    <td>Introduction </td>
+                    <td>8:00 pm </td>
+                    <td>10:00pm </td>
+                    <td>2hrs </td>
+                  </tr>
+                  <tr>
+                    <td scope="row">1.1</td>
+                    <td>Friday</td>
+                    <td>23 Feb 2020</td>
+                    <td>Introduction </td>
+                    <td>8:00 pm </td>
+                    <td>10:00pm </td>
+                    <td>2hrs </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

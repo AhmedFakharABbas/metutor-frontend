@@ -1,0 +1,119 @@
+.classroom-attendances-popup {
+  .mat-dialog-title {
+    margin: 0 0 10px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+
+      span {
+        font-weight: normal;
+        color: #696969;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .classroom-item {
+    overflow: hidden;
+    padding: 8px;
+    border-radius: 10px;
+    border: solid 1px #e4e4e4;
+    box-shadow: none;
+
+    .date {
+      background-color: rgba(59, 179, 193, 0.04);
+
+      h2 {
+        color: #696969;
+        font-size: 16px;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 20px;
+        color: #2a2a2a;
+      }
+
+      h4 {
+        font-size: 15px;
+        color: #696969;
+      }
+    }
+
+    .card-title {
+      color: #2a2a2a;
+      font-size: 22px;
+    }
+
+    p {
+      color: #696969;
+      font-size: 16px;
+    }
+
+    .list {
+      padding: 5px;
+
+      .menu {
+        padding-right: 0;
+        margin-top: 10px;
+
+        img {
+          margin-right: 5px;
+        }
+
+        span {
+          color: #2a2a2a;
+          margin-left: 5px;
+          font-size: 14px;
+        }
+
+        strong {
+          font-size: 16px;
+          color: #696969;
+          font-weight: 500;
+        }
+      }
+    }
+
+  }
+
+  .table-responsive {
+    border-radius: 6px;
+    border: 1px solid #ededed;
+    border-top: none;
+  }
+
+  table {
+    margin: 0;
+    border-top: none;
+
+    th {
+      color: #949494;
+      font-size: 13px;
+      border-bottom: none;
+    }
+
+    td {
+      border-bottom: 1px solid #ededed;
+      color: #2a2a2a;
+      font-size: 13px;
+
+      button {
+        color: #3bb3c1;
+        font-weight: bold;
+        background-color: rgb(59 179 193 / 12%);
+        font-size: 11px;
+        border-radius: 10px;
+        min-width: 0;
+        padding: 11px;
+        line-height: 0;
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}

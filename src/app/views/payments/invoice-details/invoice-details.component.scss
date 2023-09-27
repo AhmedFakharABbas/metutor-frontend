@@ -1,0 +1,72 @@
+.invoice-details {
+  h2 {
+    color: #2a2a2a;
+    font-size: 40px;
+    height: 50px;
+  }
+
+  .card {
+    border-radius: 12px;
+    border: solid 1px #e2e2e2;
+    background-color: #ffffff;
+    box-shadow: none;
+    margin-bottom: 20px;
+
+    h3 {
+      color: #2a2a2a;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid #e2e2e2;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+
+      span {
+        color: #696969;
+        font-size: 15px;
+      }
+
+      strong {
+        color: #000;
+        font-size: 15px;
+      }
+
+      &.promocode {
+
+        span,
+        strong {
+          color: #ff554b;
+        }
+      }
+
+      &.total-payment {
+        border-top: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+        padding: 15px 0;
+      }
+    }
+
+    .have-coupon {
+      input {
+        border-radius: 4px 0 0 4px;
+      }
+
+      button {
+        border-radius: 0 4px 4px 0;
+        background-color: #2a2a2a;
+        color: #FFF;
+      }
+    }
+
+    .pay-now {
+      margin-top: 50px;
+      padding: 10px 40px;
+      font-weight: bold;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+  }
+}

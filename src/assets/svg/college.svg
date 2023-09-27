@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <g>
+                <g>
+                    <g>
+                        <path fill="#FAFAFA" d="M66.625 82h-51.25C6.883 82 0 75.117 0 66.625v-51.25C0 6.883 6.883 0 15.375 0h51.25C75.117 0 82 6.883 82 15.375v51.25C82 75.117 75.117 82 66.625 82z" transform="translate(-357 -904) translate(210 729) translate(0 135) translate(147 40)"/>
+                        <g fill="#3BB3C1">
+                            <path fill-opacity=".559" d="M16.77 0.002L7.232 0.002 7.232 5.818 16.77 4.228z" transform="translate(-357 -904) translate(210 729) translate(0 135) translate(147 40) translate(20 20)"/>
+                            <path d="M37.768 39.538V12H22.23v27.537h-2.46V6.223L4.232 8.813v30.725H0v2.46h42v-2.46h-4.232zm-6.076-23.999h2.614V18h-2.614v-2.46zm0 6h2.614v2.46h-2.614v-2.46zm0 6h2.614v2.46h-2.614v-2.46zm0 5.999h2.614v2.46h-2.614v-2.46zm-6-17.999h2.615V18h-2.614v-2.46zm0 6h2.615v2.46h-2.614v-2.46zm0 6h2.615v2.46h-2.614v-2.46zm0 5.999h2.615v2.46h-2.614v-2.46zM13.694 9.54h2.614V12h-2.614V9.54zm0 6h2.614V18h-2.614v-2.46zm0 5.999h2.614v2.46h-2.614v-2.46zm0 6h2.614v2.46h-2.614v-2.46zm-5.999-12h2.614V18H7.694v-2.46zm0 6h2.614v2.46H7.694v-2.46zm0 6h2.614v2.46H7.694v-2.46zm.076 5.999h8.46v6h-2.46v-3.54h-3.539v3.54h-2.46v-6z" transform="translate(-357 -904) translate(210 729) translate(0 135) translate(147 40) translate(20 20)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

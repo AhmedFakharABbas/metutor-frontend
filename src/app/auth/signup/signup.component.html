@@ -1,0 +1,162 @@
+<div class="container py-5 signup-block">
+  <div class="row">
+    <div class="col-md-5 d-flex align-items-center">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)" class="w-100">
+        <div>
+          <h3 class="m-0">Welcome!</h3>
+          <h4 class="mb-5">Let's get you set up</h4>
+          <!-- <p>{{roles|json}}</p> -->
+
+          <div class="form-group types">
+            <label>Choose account type</label>
+            <div class="row">
+              <div class="col-md-6" *ngFor="let role of roles">
+
+                <button mat-button (click)="userType = role.id" class="w-100 text-left"
+                  [ngClass]="userType == role.id?'active':''" type="button">
+                  <mat-icon>local_library</mat-icon>
+                  I'm a {{role.name}}
+                </button>
+              </div>
+              <!-- <div class="col-md-6">
+                <button mat-button (click)="userType = 'TUTOR'" class="w-100 text-left"
+                  [class.active]="userType === 'TUTOR'" type="button">
+                  <mat-icon>school</mat-icon>
+                  I'm a tutor
+                </button>
+              </div> -->
+              <!-- <div class="col-md-6">
+                <button mat-button (click)="userType = 'STUDENT'" class="w-100 text-left"
+                  [class.active]="userType === 'STUDENT'" type="button">
+                  <mat-icon>local_library</mat-icon>
+                  I'm a student
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button mat-button (click)="userType = 'TUTOR'" class="w-100 text-left"
+                  [class.active]="userType === 'TUTOR'" type="button">
+                  <mat-icon>school</mat-icon>
+                  I'm a tutor
+                </button>
+              </div> -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="name">What's your first name?</label>
+                <input type="text" class="custom-input w-100 input-bordered" id="name" placeholder="first name"
+                  formControlName="displayName">
+                <div class="text-danger"
+                  *ngIf="displayName.touched && (displayName.invalid || (displayName.errors && displayName.errors.multipleWords))">
+                  Please write your firstname</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="name">What's your last Name?</label>
+                <input type="text" class="custom-input w-100 input-bordered" id="name" placeholder="Last name"
+                  formControlName="displayName">
+                <div class="text-danger"
+                  *ngIf="displayName.touched && (displayName.invalid || (displayName.errors && displayName.errors.multipleWords))">
+                  Please write your lastname</div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="custom-input w-100 input-bordered" id="email" placeholder="ku@pecafhuj.co.uk"
+              formControlName="email" email>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <div class="w-100">
+              <ngx-intl-tel-input [cssClass]="'custom-input w-100 input-bordered'"
+                [ngClass]="{'has-error': !phoneNumber.valid && phoneNumber.touched}"
+                [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+                [searchCountryFlag]="true" [selectFirstCountry]="true" [phoneValidation]="true"
+                [separateDialCode]="true" [selectedCountryISO]="selectedCountry" formControlName="mobileNumber">
+              </ngx-intl-tel-input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pass">Choose Password</label>
+            <input type="password" class="custom-input w-100 input-bordered" id="pass" placeholder="**********"
+              formControlName="password">
+          </div>
+
+          <div class="form-group mt-4 mb-2">
+            <button mat-flat-button color="primary" class="py-2 d-block w-100" cdkFocusInitial type="submit"
+              [disabled]="signupForm.invalid || loading">
+              Create my account
+              <mat-icon class="spinner" *ngIf="loading">autorenew</mat-icon>
+            </button>
+          </div>
+
+          <div class="row mt-4 social">
+            <div class="col-md-6">
+              <button mat-button type="button" class="w-100 google">
+                <img src="assets/svg/google.svg" alt="">
+                Sign up with Google
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button mat-button type="button" class="w-100">
+                <img src="assets/svg/linkedin.svg" alt="">
+                Sign up with Linkedin
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group mt-4">
+            <p>
+              Already have an account?
+              <a routerLink="/signin">Sign in now</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-7 d-flex align-items-center img-cover">
+      <metutors-opinions [@userTypeAnimate] *ngIf="userType == 1"></metutors-opinions>
+      <div class="steps" [@userTypeAnimate] *ngIf="userType == 3">
+        <h2>How to create your account</h2>
+        <p>
+          In 4 steps you can create your account and starting create
+          your courses or teching with MEtutors
+        </p>
+        <ul class="list-unstyled">
+          <li class="active">
+            <span>Step one</span>
+            <h4>
+              Create an account
+            </h4>
+          </li>
+          <li>
+            <span>Step two</span>
+            <h4>
+              Complete your profile
+            </h4>
+          </li>
+          <li>
+            <span>Step three</span>
+            <h4>
+              Submit your request for an interview
+            </h4>
+          </li>
+          <li>
+            <span>Step four</span>
+            <h4>
+              Start teaching
+            </h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

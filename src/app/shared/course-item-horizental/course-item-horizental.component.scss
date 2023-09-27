@@ -1,0 +1,155 @@
+.course-item {
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.12);
+
+  .card-img-top {
+    height: 230px;
+    width: 230px;
+  }
+
+  .badge-item {
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    padding: 3px 10px;
+    color: #FFF;
+    border-radius: 4px;
+    user-select: none;
+
+    &.popular {
+      background-color: #3bb3c1;
+    }
+
+    &.new {
+      background-color: #ff554b;
+    }
+
+    &.top {
+      background-color: #ff8300;
+    }
+  }
+
+  .price {
+    font-size: 16px;
+    color: #696969;
+    margin-top: 15px;
+
+    strong {
+      font-size: 18px;
+      color: #2a2a2a;
+    }
+  }
+
+  .start-btn {
+    color: #3bb3c1;
+    padding: 2px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border: 1px solid;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      background-color: #3bb3c1;
+      color: #FFF;
+    }
+  }
+
+  .card-title {
+    color: #2a2a2a;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+  }
+
+  .list {
+    background-color: rgba(59, 179, 193, 0.04);
+    padding: 5px;
+
+    .menu {
+      padding-right: 0;
+
+      img {
+        margin-right: 5px;
+      }
+
+      span {
+        color: #2a2a2a;
+        margin-left: 5px;
+        font-size: 14px;
+      }
+
+      strong {
+        font-size: 16px;
+        color: #696969;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .desc {
+    color: #696969;
+    font-size: 17px;
+    margin: 15px 0;
+  }
+
+  .count {
+    color: #FF8E18;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10px;
+  }
+
+  .review {
+    color: #949494;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .info {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    h2 {
+      color: #2a2a2a;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    h3 {
+      color: #696969;
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .course-item {
+    h1 {
+      font-size: 25px;
+    }
+
+    .desc {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .card-img-top {
+      width: 100%;
+    }
+
+    .list .menu {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      margin: 0 0 15px;
+    }
+  }
+}

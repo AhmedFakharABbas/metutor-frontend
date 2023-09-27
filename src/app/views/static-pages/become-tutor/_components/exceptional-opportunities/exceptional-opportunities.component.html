@@ -1,0 +1,14 @@
+<div class="exceptional-opportunities">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Exceptional opportunities</h1>
+      </div>
+
+      <div class="col-md text-center" [class.border-right]="!isLast" *ngFor="let tutor of tutorStatistics; let isLast = last">
+        <h2>{{ tutor?.value }}</h2>
+        <h3>{{ tutor?.type }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

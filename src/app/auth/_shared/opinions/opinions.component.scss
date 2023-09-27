@@ -1,0 +1,47 @@
+:host ::ng-deep .opinion {
+  rating span.bs-rating-star.active {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    display: inline-block;
+    font-weight: bold;
+    background-color: #3bb3c1;
+    margin-right: 4px;
+    color: #FFF;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  h3 {
+    color: #2a2a2a;
+    font-weight: bold;
+  }
+
+  p.desc {
+    color: #696969;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+  }
+
+  h4 {
+    color: #2a2a2a;
+    margin-top: 10px;
+  }
+
+  .info {
+    h2 {
+      color: #2a2a2a;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    h3 {
+      color: #5a7184;
+      font-size: 12px;
+      margin: 0;
+      margin-top: 5px;
+      font-weight: normal;
+    }
+  }
+}

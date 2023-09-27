@@ -1,0 +1,97 @@
+<form [formGroup]="form" class="card select-tutor" (ngSubmit)="onSubmit(form)">
+  <div class="card-body">
+    <div class="row row-block">
+      <div class="col-md-4">
+        <h2>Choose expert tutor</h2>
+        <h4>choose from +1000 expert tutors with excellent experience</h4>
+      </div>
+      <div class="col-md-8">
+        <div class="list-tutors" *ngIf="!loading">
+          <mat-radio-group class="d-flex flex-column" formControlName="tutor">
+            <mat-radio-button *ngFor="let tutor of tutors" [value]="tutor?.id">
+              <div class="row">
+                <div class="position-relative img-avatar">
+                  <img [src]="tutor?.avatar" meTutorsDefaultAvatar alt="" width="60px" height="60px">
+                  <svg class="position-absolute status" width="16" height="16" [ngClass]="{
+                        'is-online': tutor?.status === tutorStatus.online, 
+                        'is-busy': tutor?.status === tutorStatus.busy, 
+                        'is-offline': tutor?.status === tutorStatus.offline, 
+                        'is-away': tutor?.status === tutorStatus.away
+                      }" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="8" cy="8" r="7" fill="#949494" stroke="white" stroke-width="2" />
+                  </svg>
+                </div>
+                <div class="col">
+                  <h2>
+                    {{ tutor?.name }}
+                    <!-- <span class="text-uppercase pro">Pro</span>
+                      <span class="text-uppercase verified">Verified</span> -->
+                  </h2>
+                  <h3 *ngIf="tutor?.major">{{ tutor?.major }}</h3>
+                  <div class="row">
+                    <div class="col-12 d-flex align-items-center">
+                      <div>
+                        <rating [ngModel]="tutor?.rate" [ngModelOptions]="{standalone: true}" max="5" [readonly]="true">
+                        </rating>
+                        <span class="count">{{ tutor?.rate }}</span>
+                        <span class="review" *ngIf="tutor?.reviewsCount">({{ tutor?.reviewsCount }} reviews)</span>
+                      </div>
+                      <div class="d-flex ml-3" *ngIf="tutor?.country">
+                        <img src="assets/svg/map.svg" class="icon" draggable="false" width="16" height="16" alt="">
+                        <span class="review">
+                          From {{ tutor?.country }}
+                        </span>
+                      </div>
+                      <div class="d-flex ml-3" *ngIf="tutor?.studentNumber">
+                        <img src="assets/svg/students.svg" class="icon" draggable="false" width="16" height="16" alt="">
+                        <span class="review">
+                          Help {{ tutor?.studentNumber }} student
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="col-md-2 full-profile" [routerLink]="'/tutor-profile/' + tutor?.id" target="_blank">
+                  <img src="assets/svg/share-link.svg" draggable="false" width="16px" height="16px" alt="">
+                  Full profile
+                </a>
+              </div>
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <ng-container *ngIf="loading">
+          <div class="ph-item mt-4 mx-2" *ngFor="let i of [1, 2, 3, 4, 5]">
+            <div class="ph-col-2">
+              <div class="ph-avatar"></div>
+            </div>
+
+            <div>
+              <div class="ph-row mt-2">
+                <div class="ph-col-10"></div>
+                <div class="ph-col-2 empty"></div>
+                <div class="ph-col-6"></div>
+                <div class="ph-col-6 empty"></div>
+                <div class="ph-col-2"></div>
+                <div class="ph-col-10 empty"></div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12 overflow-hidden">
+        <button mat-flat-button color="primary" class="float-right" type="submit" [disabled]="form.invalid">
+          Save & continue
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+        <button mat-button class="float-right back-btn" type="button" (click)="onBack.emit()">
+          <mat-icon>arrow_back</mat-icon>
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

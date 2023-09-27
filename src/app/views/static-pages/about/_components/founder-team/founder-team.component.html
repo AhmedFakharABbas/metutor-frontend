@@ -1,0 +1,14 @@
+<div class="row founder-team">
+  <div class="col-md-12 text-center">
+    <h1>Our Founder team</h1>
+    <p>
+      Explore more than 500 courses in different subjects, languages and study fields.
+    </p>
+  </div>
+
+  <div class="col-md-3" *ngFor="let founder of founders">
+    <img [src]="founder?.image" meTutorsDefaultAvatar alt="">
+    <h2>{{ founder?.name }}</h2>
+    <h3>{{ founder?.position }}</h3>
+  </div>
+</div>

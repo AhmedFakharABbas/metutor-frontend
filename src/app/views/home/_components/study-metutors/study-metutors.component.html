@@ -1,0 +1,23 @@
+<div class="row study-metutors">
+  <div class="col-md-12 text-center">
+    <h1>Study with MEtutors</h1>
+    <p>
+      Explore more than 500 courses in different subjects, languages and study fields.
+    </p>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-md-4 item" *ngFor="let category of categories">
+        <div class="card text-center h-100">
+          <div class="card-body d-flex flex-column">
+            <img [src]="category?.image" class="m-auto" alt="" draggable="false" width="80" height="80">
+            <h2>{{ category?.name }}</h2>
+            <h4 class="flex-grow-1" [innerHTML]="category?.description.slice(0, 100)"></h4>
+            <a mat-button [routerLink]="'/' + category?.slug">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,181 @@
+.featured-tutors {
+  padding: 50px 0;
+
+  h1 {
+    font-size: 35px;
+    line-height: 1.3;
+    color: #2a2a2a;
+  }
+
+  p {
+    color: #696969;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .card-item {
+    border-radius: 4px;
+    background-color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    margin-right: 30px;
+
+    .img-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+      }
+
+      .status {
+        right: 5px;
+        top: 5px;
+
+        &.is-online circle {
+          fill: #00ab1e;
+        }
+
+        &.is-offline circle {
+          fill: #949494;
+        }
+
+        &.is-busy circle {
+          fill: #ad0909;
+        }
+
+        &.is-away circle {
+          fill: #da9312;
+        }
+      }
+    }
+
+    h2 {
+      color: #000;
+      font-size: 17px;
+
+      span {
+        color: #fff;
+        font-size: 12px;
+        padding: 3px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &.pro {
+          background-color: #949494;
+        }
+
+        &.verified {
+          background-color: #007cff;
+        }
+      }
+    }
+
+    h3 {
+      color: #7d7d7d;
+      font-size: 13px;
+    }
+
+    .count {
+      color: #FF8E18;
+      font-weight: bold;
+      font-size: 15px;
+      margin-left: 10px;
+    }
+
+    .review {
+      color: #949494;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    .list {
+      margin: 20px 0;
+
+      span {
+        color: #949494;
+        font-size: 13px;
+      }
+
+      .icon {
+        margin-right: 5px;
+        width: auto;
+      }
+    }
+
+    .bio {
+      color: #2a2a2a;
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 25px;
+      margin: 5px 10px 5px 0;
+    }
+
+    .specialization {
+      margin: 15px 0;
+
+      h2 {
+        color: #2a2a2a;
+        font-size: 15px;
+        font-weight: normal;
+      }
+
+      span {
+        background-color: rgb(17 26 55 / 10%);
+        color: #000;
+        margin-right: 5px;
+        font-size: 13px;
+        padding: 3px 5px;
+        border-radius: 5px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .actions {
+      .book {
+        color: #3bb3c1;
+        padding: 2px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border: 1px solid #e2e2e2;
+        background: #FFF;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          background-color: #3bb3c1;
+          color: #FFF;
+        }
+      }
+
+      .more {
+        color: #000;
+        padding: 0 5px;
+        min-width: 0;
+        border: 1px solid #dcdcdc;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .featured-tutors {
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .main-button-transparent {
+      margin-bottom: 20px;
+    }
+  }
+}

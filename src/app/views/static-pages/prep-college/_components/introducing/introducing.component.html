@@ -1,0 +1,13 @@
+<div class="row introducing" *ngIf="prepCollageIntro && prepCollageIntro.length">
+  <div class="col-md-12">
+    <span class="text-uppercase">INTRODUCING</span>
+  </div>
+  <div class="col-md-5">
+    <h1>{{ prepCollageIntro[0]?.title }}</h1>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{ prepCollageIntro[0].content }}
+    </p>
+  </div>
+</div>

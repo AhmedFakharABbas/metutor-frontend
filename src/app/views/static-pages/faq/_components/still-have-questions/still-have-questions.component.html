@@ -1,0 +1,41 @@
+<div class="row still-questions">
+  <div class="col-md-12 text-center">
+    <h1>Still have a questions?</h1>
+    <p>
+      If you cannot find answer to your question in our FAQ, you can always contact us. We wil answer to you shortly!
+    </p>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col offset-md-1 item">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <img src="assets/svg/envelope.svg" alt="" draggable="false" width="65" height="65">
+
+            <h2 *ngIf="info?.contact_us_email">
+              <a href="mailto:{{ info?.contact_us_email }}" target="_blank"
+                class="h-link">{{ info?.contact_us_email }}</a>
+            </h2>
+            <h4 class="mb-0">Email us for general queries</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col item">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <img src="assets/svg/phone.svg" alt="" draggable="false" width="65" height="65">
+
+            <h2 *ngIf="info?.phone">
+              <a href="tel:{{ info?.phone }}" class="h-link">{{ info?.phone }}</a>
+            </h2>
+            <h4 class="mb-0">We are always happy to help.</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="offset-md-1"></div>
+    </div>
+  </div>
+</div>

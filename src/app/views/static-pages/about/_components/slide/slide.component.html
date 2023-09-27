@@ -1,0 +1,31 @@
+<div class="slide">
+  <div class="container" style="background-image: url('assets/about/oval.svg')">
+    <div class="row">
+      <div class="col-md-7">
+        <h3>
+          About Us
+        </h3>
+        <h1>
+          Improving Lives
+          <br>
+          Through Learning
+        </h1>
+        <p>
+          MEtutors is a newly formed educational organization.
+          The founder and all of MEtutors’ employees are
+          ommitted to providing superior educationto
+          students around the world.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img src="assets/about/cover.png" alt="" draggable="false" />
+      </div>
+    </div>
+    <div class="row info text-center">
+      <div class="col-md" [class.border-right]="!isLast" *ngFor="let about of aboutStatistics; let isLast = last">
+        <h2>{{ about?.value }}</h2>
+        <h3>{{ about?.type }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

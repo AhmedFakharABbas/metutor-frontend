@@ -1,0 +1,6 @@
+<metutors-navbar *ngIf="!showMobileView" [categories]="categories"></metutors-navbar>
+<metutors-navbar-mobile *ngIf="showMobileView" [categories]="categories"></metutors-navbar-mobile>
+<div [style.minHeight.px]="heightPX">
+  <router-outlet></router-outlet>
+</div>
+<metutors-footer *ngIf="showFooter"></metutors-footer>

@@ -1,0 +1,59 @@
+<div class="container-fluid signin-block" [style.height.px]="heightPX">
+  <div class="row h-100">
+    <div class="col-md-4 offset-md-2 d-flex align-items-center">
+      <form [formGroup]="signinForm" (ngSubmit)="onSubmit(signinForm)" class="w-100">
+        <div>
+          <h4 class="mb-5">Login</h4>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" class="custom-input w-100 input-bordered" id="email" placeholder="ku@pecafhuj.co.uk"
+              formControlName="username">
+          </div>
+
+          <div class="form-group">
+            <label for="pass">Choose Password</label>
+            <div class="position-relative">
+              <input type="password" class="custom-input w-100 input-bordered" id="pass" placeholder="**********"
+                formControlName="password">
+              <a routerLink="/forget-password" class="forget-link">Forget!</a>
+            </div>
+          </div>
+
+          <div class="form-group mt-4 mb-2">
+            <button mat-flat-button color="primary" class="py-2 d-block w-100" cdkFocusInitial type="submit"
+              [disabled]="signinForm.invalid || loading">
+              Login
+              <mat-icon class="spinner" *ngIf="loading">autorenew</mat-icon>
+            </button>
+          </div>
+
+          <div class="row mt-4 social">
+            <div class="col-md-6">
+              <button mat-button type="button" class="w-100 google">
+                <img src="assets/svg/google.svg" alt="">
+                Sign up with Google
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button mat-button type="button" class="w-100">
+                <img src="assets/svg/linkedin.svg" alt="">
+                Sign up with Linkedin
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group mt-4">
+            <p>
+              haven’t an account?
+              <a routerLink="/signup">Sign up now</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6 d-flex align-items-center img-cover">
+      <img src="assets/authentication/login.png" class="w-100" alt="" draggable="false" [style.height.px]="heightPX">
+    </div>
+  </div>
+</div>

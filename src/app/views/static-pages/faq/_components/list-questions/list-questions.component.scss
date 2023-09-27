@@ -1,0 +1,42 @@
+.list-questions {
+  padding: 60px 15px;
+
+  .question {
+    margin-bottom: 15px;
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 3%);
+    border: solid 1px #e5eaf4;
+
+    h1 {
+      color: #2a2a2a;
+      font-size: 20px;
+    }
+
+    button {
+      line-height: 10px;
+      padding: 0;
+      min-width: 0;
+      margin: 0 10px;
+      width: 25px;
+      height: 25px;
+    }
+
+    p {
+      color: #696969;
+      font-size: 18px;
+      line-height: 1.78;
+      margin: 20px 0 0;
+      width: 90%;
+    }
+
+    .main-color {
+      color: #3bb3c1;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .list-questions h1 {
+    font-size: 25px;
+  }
+}

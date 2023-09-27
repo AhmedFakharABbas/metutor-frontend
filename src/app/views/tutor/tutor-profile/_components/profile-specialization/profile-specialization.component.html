@@ -1,0 +1,14 @@
+<div class="card" *ngIf="tutor?.subjects && tutor?.subjects.length">
+  <div class="card-body">
+    <h1 class="title">Specialization</h1>
+    <div class="list">
+      <h2>Fields</h2>
+      <span *ngFor="let field of tutor?.fields">{{ field?.name }}</span>
+    </div>
+
+    <div class="list">
+      <h2>Subjects</h2>
+      <span *ngFor="let subject of tutor?.subjects">{{ subject?.name }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.share {
+  h2 {
+    font-size: 13px;
+    color: #7d7d7d;
+    font-weight: bold;
+  }
+
+  .share-img {
+    right: 8px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .icon {
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    img {
+      margin-right: 8px;
+    }
+  }
+}

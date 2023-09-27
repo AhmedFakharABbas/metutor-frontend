@@ -1,0 +1,108 @@
+<div class="leave-feedback-popup">
+  <div class="d-flex" mat-dialog-title>
+    <h2 class="flex-grow-1 m-0 d-flex flex-column">
+      Leave a feedback
+      <span class="d-block mt-2">Write your feedback to your tutor</span>
+    </h2>
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="pt-2">
+    <div class="row">
+      <div class="col-12">
+        <mat-tab-group mat-align-tabs="start">
+          <mat-tab label="Tutor Feedback" *ngIf="isStudentView">
+            <form [formGroup]="tutorFeedbackForm" (ngSubmit)="onSubmitTutorFeedback(tutorFeedbackForm)"
+              class="rating-block">
+              <div class="row mt-3">
+                <div class="col">
+                  <h2>Expert in the subject</h2>
+                </div>
+                <div class="col-md-2">
+                  <rating max="5" formControlName="expertSubject"></rating>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <h2>Present complex topics clearly and easily
+                  </h2>
+                </div>
+                <div class="col-md-2">
+                  <rating max="5" formControlName="presentTopics"></rating>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <h2>Skillful in engaging students</h2>
+                </div>
+                <div class="col-md-2">
+                  <rating max="5" formControlName="skillfulStudents"></rating>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <h2>Always on time</h2>
+                </div>
+                <div class="col-md-2">
+                  <rating max="5" formControlName="alwaysTime"></rating>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="message">Write a feedback*</label>
+                    <textarea rows="5" class="custom-input w-100 input-bordered" id="message"
+                      placeholder="Type your Write a feedback …" formControlName="feedback"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-12 overflow-hidden">
+                  <button mat-flat-button color="primary" class="float-right" type="submit"
+                    [disabled]="tutorFeedbackForm.invalid || isSendFeedback">
+                    Send feedback
+                    <mat-icon class="spinner" *ngIf="isSendFeedback">autorenew</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-tab>
+          <mat-tab label="Course feedback">
+            <form [formGroup]="courseFeedbackForm" (ngSubmit)="onSubmitCourseFeedback(courseFeedbackForm)"
+              class="rating-block">
+              <div class="row mt-3">
+                <div class="col">
+                  <h2>Rate</h2>
+                </div>
+                <div class="col-md-2">
+                  <rating max="5" formControlName="rate"></rating>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="feedback">Write a feedback*</label>
+                    <textarea rows="5" class="custom-input w-100 input-bordered" id="feedback"
+                      placeholder="Type your Write a feedback …" formControlName="feedback"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-12 overflow-hidden">
+                  <button mat-flat-button color="primary" class="float-right" type="submit"
+                    [disabled]="courseFeedbackForm.invalid || isSendFeedback">
+                    Send feedback
+                    <mat-icon class="spinner" *ngIf="isSendFeedback">autorenew</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

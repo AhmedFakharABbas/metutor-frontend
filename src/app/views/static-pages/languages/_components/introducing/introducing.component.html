@@ -1,0 +1,9 @@
+<div class="row introducing" *ngIf="langCourseIntro && langCourseIntro.length">
+  <div class="col-md-12">
+    <span class="text-uppercase">INTRODUCING</span>
+    <h1>{{ langCourseIntro[0]?.title }}</h1>
+    <p>
+      {{ langCourseIntro[0]?.content }}
+    </p>
+  </div>
+</div>

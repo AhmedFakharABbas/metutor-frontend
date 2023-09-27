@@ -1,0 +1,8 @@
+<metutors-faq-search [listFAQs]="listFAQs" [title]="'We are here to help you'" [tempListFAQs]="tempListFAQs"
+  (submitFAQ)="listFAQs = $event">
+</metutors-faq-search>
+<div class="container">
+  <metutors-select-faq-topic></metutors-select-faq-topic>
+  <metutors-list-questions [listFAQs]="listFAQs"></metutors-list-questions>
+  <metutors-still-have-questions [info]="systemInfoDetails"></metutors-still-have-questions>
+</div>

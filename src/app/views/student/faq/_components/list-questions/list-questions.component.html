@@ -1,0 +1,23 @@
+<div class="row list-questions">
+  <div class="col-12">
+    <div class="card question" *ngFor="let question of listFAQs">
+      <div class="card-body">
+        <div class="d-flex">
+          <h1 class="flex-grow-1 m-0" [class.main-color]="openQuestion && selectedQuestion === question.id">
+            {{ question?.question }}
+          </h1>
+          <button mat-button *ngIf="selectedQuestion !== question.id" (click)="changeOpenSelection(question.id)">
+            <mat-icon>add</mat-icon>
+          </button>
+          <button mat-button class="main-color" *ngIf="openQuestion && selectedQuestion === question.id"
+            (click)="changeOpenSelection(question.id)">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+        <p class="desc" *ngIf="openQuestion && selectedQuestion === question.id" [@slideInOut]>
+          {{ question?.answer }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

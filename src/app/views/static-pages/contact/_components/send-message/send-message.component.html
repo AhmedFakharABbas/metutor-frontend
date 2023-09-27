@@ -1,0 +1,88 @@
+<div class="row send-message">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <p-gmap #gmap [style]="{'width':'100%','height':'320px', 'margin-bottom': '1em'}" [options]="options"
+          [overlays]="overlays"></p-gmap>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)" class="w-100">
+          <div>
+            <h4 class="mb-4">Send a message</h4>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name">Your name*</label>
+                  <input type="text" class="custom-input w-100 input-bordered" id="name" placeholder="Type name here"
+                    formControlName="name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">Contact email *</label>
+                  <input type="email" email class="custom-input w-100 input-bordered" id="email"
+                    placeholder="you@example.com" formControlName="email">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="companyName">Company name (Optional)</label>
+                  <input type="text" class="custom-input w-100 input-bordered" id="companyName"
+                    placeholder="Type company name here" formControlName="companyName">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="subject">Message Subject *</label>
+                  <input type="text" class="custom-input w-100 input-bordered" id="subject"
+                    placeholder="Type subject here" formControlName="subject">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="message">Your message*</label>
+                  <textarea rows="5" class="custom-input w-100 input-bordered" id="message"
+                    placeholder="Type your message…." formControlName="message"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mt-2 mb-2 d-flex justify-content-between">
+              <div class="d-flex">
+                <div class="file-upload d-flex align-items-center" (click)="filePicker.click()">
+                  <img src="assets/svg/upload.svg" alt="" draggable="false" width="25" height="25">
+                  <div>
+                    <h2>Attach file</h2>
+                    <h3>accept .jpg, .png, .pdf</h3>
+                  </div>
+                  <input type="file" hidden #filePicker (change)="onFileUpload($event)">
+                </div>
+                <div class="block-file d-flex ml-3 align-items-center" *ngIf="filePreview">
+                  <mat-icon>attach_file</mat-icon>
+                  <div class="ml-2">
+                    <h3>{{ filePreview?.name }}</h3>
+                    <h5>{{ filePreview?.size }}</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <button mat-flat-button color="primary" class="py-2" cdkFocusInitial type="submit"
+                  [disabled]="contactForm.invalid || loading">
+                  Send message
+                  <mat-icon class="spinner" *ngIf="loading">autorenew</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

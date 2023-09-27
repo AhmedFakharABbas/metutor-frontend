@@ -1,0 +1,40 @@
+<div class="learning-environment">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Veriety of subjects, College and High School Tutoring </h1>
+
+        <p>
+          We offer one-on-one tutoring at the cost you can afford resulting in an experience quality learning time.
+        </p>
+
+        <div class="row mt-4" *ngIf="courseFieldSubject && courseFieldSubject.length">
+          <div class="col-md-6 d-flex mt-4" *ngFor="let course of courseFieldSubject">
+            <img [src]="course?.icon" width="65px" height="65px" draggable="false" alt="">
+            <div class="ml-2">
+              <h2>{{ course?.name }}</h2>
+              <p class="details">
+                <ng-container *ngFor="let subject of course?.subjects; let isLast = last">
+                  {{ subject?.name }}
+                  <ng-container *ngIf="!isLast">, </ng-container>
+                </ng-container>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button mat-flat-button color="primary">
+          Start learning now
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16.172 10.9999H4V12.9999H16.172L10.808 18.3639L12.222 19.7779L20 11.9999L12.222 4.22192L10.808 5.63592L16.172 10.9999Z"
+              fill="#FFF" />
+          </svg>
+        </button>
+      </div>
+      <div class="col-md-5">
+        <img src="assets/homepage/contact.png" class="contact-img" draggable="false" height="450px" alt="">
+      </div>
+    </div>
+  </div>
+</div>

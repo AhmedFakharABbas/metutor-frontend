@@ -1,0 +1,30 @@
+<div class="settings">
+  <div class="card overflow-hidden">
+    <div class="card-body p-0">
+      <div class="d-flex row">
+        <div class="col-md-4">
+          <ul class="list-unstyled m-0 h-100">
+            <li [class.active]="tab === 'ACCOUNT_SETTINGS'" (click)="tab = 'ACCOUNT_SETTINGS'">
+              Account settings
+            </li>
+            <li [class.active]="tab === 'SECURITY_SETTINGS'" (click)="tab = 'SECURITY_SETTINGS'">
+              Security settings
+            </li>
+            <li [class.active]="tab === 'USER_PREFERENCES'" (click)="tab = 'USER_PREFERENCES'">
+              User preferences
+            </li>
+            <li [class.active]="tab === 'PAYMENT_INFORMATION'" (click)="tab = 'PAYMENT_INFORMATION'">
+              Payment information
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <metutors-account-settings *ngIf="tab === 'ACCOUNT_SETTINGS'"></metutors-account-settings>
+          <metutors-security-settings *ngIf="tab === 'SECURITY_SETTINGS'"></metutors-security-settings>
+          <metutors-user-preferences *ngIf="tab === 'USER_PREFERENCES'"></metutors-user-preferences>
+          <metutors-payment-information *ngIf="tab === 'PAYMENT_INFORMATION'"></metutors-payment-information>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

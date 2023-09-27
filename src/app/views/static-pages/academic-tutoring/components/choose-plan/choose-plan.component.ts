@@ -1,0 +1,12 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'metutors-choose-plan',
+  templateUrl: './choose-plan.component.html',
+  styleUrls: ['./choose-plan.component.scss'],
+})
+export class ChoosePlanComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {}
+}

@@ -1,0 +1,72 @@
+.footer {
+  background-color: rgba(59, 179, 193, 0.04);
+  padding: 70px 0 50px;
+
+  .links {
+    h1 {
+      font-weight: bold;
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        margin-bottom: 15px;
+
+        a {
+          color: #2a2a2a
+        }
+      }
+    }
+  }
+
+  .bordered-top {
+    border-top: 1px solid #d7d7d7;
+  }
+
+  .subscribe {
+    padding: 30px 15px 40px;
+    margin-top: 50px;
+
+    h1 {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .form-block {
+      input {
+        font-size: 12px;
+        padding: 10px 170px 10px 10px;
+        border: solid 1px #d7d7d7;
+        border-radius: 4px;
+      }
+
+      button {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+      }
+    }
+
+    .social {
+      button {
+        min-width: 0;
+        padding: 2px 15px;
+      }
+    }
+  }
+
+  .copyright {
+    padding-top: 30px;
+    color: #2a2a2a;
+
+    ul li a {
+      color: #2a2a2a;
+    }
+  }
+}
+
+@media(max-width:767px) {}

@@ -1,0 +1,54 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)" class="edit-classroom">
+  <div class="d-flex" mat-dialog-title>
+    <h2 class="flex-grow-1 m-0 d-flex flex-column">
+      Edit classroom
+      <span class="d-block mt-2">We’re sorry, Tutor you’re selected isn’t available for your days and time.</span>
+    </h2>
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Starting date</h3>
+        <mat-form-field appearance="outline" class="w-100">
+          <input matInput [matDatepicker]="startPicker" [placeholder]="'Choose a date'" (focus)="startPicker.open()"
+            [min]="minDate" formControlName="startDate" (dateChange)="onChangeDate()">
+          <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <h3>Days</h3>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-select formControlName="days" [placeholder]="'Choose day'" disabled>
+            <mat-option [value]="day" *ngFor="let day of listDays">
+              {{ day }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <h3>Starting time</h3>
+        <p-calendar formControlName="startTime" placeholder="Select starting time" [timeOnly]="true" [hourFormat]="12"
+          inputId="timeonly" (onClose)="onCloseCalendar()">
+        </p-calendar>
+      </div>
+      <div class="col-md-6">
+        <h3>Ending time</h3>
+        <p-calendar formControlName="endTime" placeholder="Select ending time" [hourFormat]="12" [timeOnly]="true"
+          inputId="timeonly" (onClose)="onCloseCalendar()"></p-calendar>
+      </div>
+      <div class="col-md-6">
+        <h3>Duration</h3>
+        <input type="text" class="form-control" formControlName="duration">
+      </div>
+    </div>
+
+    <button mat-button class="btn-save" [disabled]="editForm.invalid" type="submit" cdkFocusInitial>
+      Save & continue
+    </button>
+  </div>
+</form>

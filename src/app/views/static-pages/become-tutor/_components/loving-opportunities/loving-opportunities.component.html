@@ -1,0 +1,41 @@
+<div class="loving-opportunities">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <mat-icon class="favorite">favorite</mat-icon>
+      </div>
+      <div class="col-md-6">
+        <h1>1,000+ Tutors are loving our Opportunities.</h1>
+      </div>
+      <div class="col-md-6">
+        <button mat-button (click)="owlCar.next()">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+        <button mat-button (click)="owlCar.prev()">
+          <mat-icon class="gray">chevron_left</mat-icon>
+        </button>
+      </div>
+
+      <div class="col-md-12">
+        <owl-carousel-o [options]="customOptions" #owlCar>
+          <ng-template carouselSlide *ngFor="let opportunity of opportunities">
+            <div class="row card-item">
+              <div class="col-md-4">
+                <img [src]="opportunity?.profile_pic" meTutorsDefaultAvatar alt="" width="90px" height="90px"
+                  class="img-avatar">
+              </div>
+
+              <div class="col-12">
+                <p class="bio">
+                  {{ opportunity?.content }}
+                </p>
+
+                <h3>- {{ opportunity?.posted_by }}</h3>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>

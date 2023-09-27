@@ -1,0 +1,62 @@
+<div class="profile-header mb-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="cover" [ngStyle]="{'background-image': 'url(' + tutor?.cover + ')'}"></div>
+      <div class="row avatar-name align-items-center">
+        <div class="col-md-2">
+          <div class="position-relative img-status">
+            <img [src]="tutor?.avatar" meTutorsDefaultAvatar alt="" class="rounded-circle" draggable="false">
+            <svg class="position-absolute status is-online" [ngClass]="{
+                'is-online': tutor?.status === tutorStatus.online, 
+                'is-busy': tutor?.status === tutorStatus.busy, 
+                'is-offline': tutor?.status === tutorStatus.offline, 
+                'is-away': tutor?.status === tutorStatus.away
+              }" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="7" fill="#949494" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+        <div class="col">
+          <h2>{{ tutor?.name }}</h2>
+          <h4>{{ tutor?.university }}</h4>
+        </div>
+      </div>
+      <div class="row details">
+        <div class="col-md-2">
+        </div>
+        <div class="col">
+          <ul class="list-unstyled list-inline m-0 d-flex">
+            <li class="list-inline-item">
+              <strong>Rating</strong>
+              <div class="d-flex">
+                <img src="assets/svg/star-fill.svg" alt="" width="20" height="20" draggable="false" />
+                <span class="count">{{ tutor?.rate }}</span>
+                <span class="review">({{ tutor?.reviewsCount }} reviews)</span>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <strong>{{ tutor?.studentNumber }}</strong>
+              <div>
+                <span class="review">Students Teaching</span>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <strong>{{ tutor?.courseNumber }}</strong>
+              <div>
+                <span class="review">Courses created</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 d-flex actions">
+          <button mat-flat-button color="primary" class="flex-grow-1 start-btn">
+            Book a Class
+          </button>
+          <button mat-button class="more">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card about-me">
+  <div class="card-body">
+    <h1 class="title">About Me</h1>
+    <p>
+      {{ tutor?.bio }}
+    </p>
+    <ul class="list-unstyled m-0">
+      <li *ngIf="tutor?.country">
+        <img src="assets/svg/map.svg" draggable="false" width="20" height="20" alt="">
+        <span>From: {{ tutor?.country }}</span>
+      </li>
+      <!-- <li *ngIf="tutor?.language">
+        <img src="assets/svg/website.svg" draggable="false" width="20" height="20" alt="">
+        <span>Speaking: {{ tutor?.language }}</span>
+      </li> -->
+      <li>
+        <img src="assets/svg/date.svg" draggable="false" width="20" height="20" alt="">
+        <span>Joined: {{ tutor?.dateJoined | date:'MMMM y' }}</span>
+      </li>
+      <li *ngIf="tutor?.teachingExperienceYears">
+        <img src="assets/svg/briefcase.svg" draggable="false" width="20" height="20" alt="">
+        <span>Total experience: +{{ tutor?.teachingExperienceYears }} years</span>
+      </li>
+      <li *ngIf="tutor?.onlineTeachingExperienceYears">
+        <img src="assets/svg/relationship.svg" draggable="false" width="20" height="20" alt="">
+        <span>Online experience: {{ tutor?.onlineTeachingExperienceYears }} years</span>
+      </li>
+    </ul>
+  </div>
+</div>

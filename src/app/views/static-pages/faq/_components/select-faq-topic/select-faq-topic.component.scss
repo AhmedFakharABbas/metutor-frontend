@@ -1,0 +1,42 @@
+.faq-topics {
+  padding: 50px 15px;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+
+  .item {
+    margin-bottom: 10px;
+
+    .card {
+      border-top: 3px solid #3bb3c1;
+    }
+
+    &:nth-child(2) .card {
+      border-color: #ff554b;
+    }
+
+    &:nth-child(3) .card {
+      border-color: #ff8300;
+    }
+
+    &:nth-child(4) .card {
+      border-color: #be63f9;
+    }
+
+    h4 {
+      font-size: 20px;
+      color: #2a2a2a;
+      padding: 30px 0;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .faq-topics h1 {
+    font-size: 25px;
+  }
+}

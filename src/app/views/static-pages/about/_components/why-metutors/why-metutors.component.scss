@@ -1,0 +1,35 @@
+.why-metutors {
+  margin-top: 80px;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+  }
+
+  p {
+    font-size: 20px;
+    color: #949494;
+    margin-bottom: 50px;
+  }
+
+  .item {
+    h2 {
+      color: #2a2a2a;
+      font-size: 15px;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .why-metutors {
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
+}

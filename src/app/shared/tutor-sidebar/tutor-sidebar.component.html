@@ -1,0 +1,92 @@
+<div class="sidebar h-100 d-flex flex-column" [class.has-sidemenu]="hasSidemenu">
+  <a class="sidebar-logo" routerLink="/">
+    <img alt="logo" src="assets/logo/logo-light.png" width="200px" draggable="false" *ngIf="!hasSidemenu">
+    <img alt="logo" src="assets/logo/logo-icon.png" width="100%" draggable="false" *ngIf="hasSidemenu">
+  </a>
+  <button mat-flat-button color="primary" class="d-block add-course">
+    <mat-icon>add</mat-icon>
+    <span class="hide-sidemenu">Add New Course</span>
+  </button>
+  <ul class="list-unstyled">
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/classroom" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M19 21C19.5523 21 20 20.5523 20 20V11H23L12.673 1.61204C12.2915 1.2649 11.7085 1.2649 11.327 1.61204L1 11H4V20C4 20.5523 4.44772 21 5 21H19ZM11 19V13H13V19H11Z"
+            fill="white" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">Classroom</span>
+      </a>
+    </li>
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/dashboard" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M13 20V18H21C21.5523 18 22 17.5523 22 17V4C22 3.44772 21.5523 3 21 3H3C2.44772 3 2 3.44772 2 4V17C2 17.5523 2.44772 18 3 18H11V20H7V22H17V20H13ZM15 10.5L10 13.5V7.5L15 10.5Z"
+            fill="#E2E2E2" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">Dashboard</span>
+      </a>
+    </li>
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/inbox" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M11.49 1.30999L2.243 6.85399C2.09222 6.94434 1.99996 7.10722 2 7.28299V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20V7.28399C22 7.10822 21.9078 6.94534 21.757 6.85499L12.519 1.30999C12.2023 1.11998 11.8067 1.11998 11.49 1.30999ZM12.061 13.683L18.346 8.24399L19.654 9.75699L12.073 16.317L4.353 9.76199L5.647 8.23799L12.061 13.683Z"
+            fill="white" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">Inbox</span>
+      </a>
+    </li>
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/badges" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="12.0234" cy="16.2429" rx="2.34375" ry="2.34366" fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0.703125 0H23.2969C23.6852 0 24 0.314766 24 0.703078V17.5772C24 17.9655 23.6852 18.2803 23.2969 18.2803H15.1691C16.781 15.8005 14.993 12.493 12.0234 12.493C9.05391 12.493 7.26591 15.8006 8.87775 18.2803H0.703125C0.314813 18.2803 0 17.9655 0 17.5772V0.703078C0 0.314766 0.314813 0 0.703125 0ZM14.8125 2.85923H9.1875C8.79919 2.85923 8.48438 3.174 8.48438 3.56231C8.48438 3.95062 8.79919 4.26539 9.1875 4.26539H14.8125C15.2008 4.26539 15.5156 3.95062 15.5156 3.56231C15.5156 3.174 15.2008 2.85923 14.8125 2.85923ZM19.0312 11.2963H4.96875C4.58044 11.2963 4.26562 10.9815 4.26562 10.5932C4.26562 10.2049 4.58044 9.89016 4.96875 9.89016H19.0312C19.4196 9.89016 19.7344 10.2049 19.7344 10.5932C19.7344 10.9815 19.4196 11.2963 19.0312 11.2963ZM4.96875 8.48395H19.0312C19.4196 8.48395 19.7344 8.16919 19.7344 7.78088C19.7344 7.39256 19.4196 7.0778 19.0312 7.0778H4.96875C4.58044 7.0778 4.26562 7.39256 4.26562 7.78088C4.26562 8.16919 4.58044 8.48395 4.96875 8.48395Z"
+            fill="white" />
+          <path
+            d="M9.2226 18.7327V23.2957C9.2226 23.8532 9.8451 24.1927 10.3142 23.8817L12.0469 22.7331L13.7795 23.8817C14.2415 24.188 14.8711 23.8598 14.8711 23.2957V18.6786C13.3898 20.4078 10.7379 20.4352 9.2226 18.7327H9.2226Z"
+            fill="white" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">badges</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="list-unstyled flex-grow-1 help-settings">
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/help/faq" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M22 17.002C21.9991 19.8194 20.0387 22.2569 17.287 22.862L16.649 20.948C17.832 20.7532 18.8654 20.0383 19.465 19H17C15.8954 19 15 18.1046 15 17V13C15 11.8954 15.8954 11 17 11H19.938C19.4331 7.00037 16.0314 4.00108 12 4.00108C7.96862 4.00108 4.56691 7.00037 4.062 11H7C8.10457 11 9 11.8954 9 13V17C9 18.1046 8.10457 19 7 19H4C2.89543 19 2 18.1046 2 17V12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12V17.002Z"
+            fill="#E2E2E2" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">Help</span>
+      </a>
+    </li>
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/settings" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M2.89039 6.13005C2.72155 5.87116 2.75714 5.5294 2.97569 5.31085L5.31082 2.97572C5.52937 2.75717 5.87113 2.72158 6.13002 2.89042L7.93701 4.06889C8.36351 3.84999 8.80744 3.66578 9.26492 3.51836L9.70924 1.40786C9.77291 1.10542 10.0397 0.888916 10.3488 0.888916H13.6512C13.9603 0.888916 14.2271 1.10542 14.2908 1.40786L14.7351 3.51836C15.1926 3.66578 15.6365 3.84999 16.063 4.06889L17.87 2.89042C18.1289 2.72158 18.4706 2.75717 18.6892 2.97572L21.0243 5.31085C21.2429 5.5294 21.2784 5.87116 21.1096 6.13005L19.9311 7.93704C20.15 8.36355 20.3342 8.80747 20.4817 9.26495L22.5922 9.70927C22.8946 9.77294 23.1111 10.0398 23.1111 10.3488V13.6512C23.1111 13.9603 22.8946 14.2271 22.5922 14.2908L20.4817 14.7351C20.3342 15.1926 20.15 15.6365 19.9311 16.063L21.1096 17.87C21.2784 18.1289 21.2429 18.4707 21.0243 18.6892L18.6892 21.0243C18.4706 21.2429 18.1289 21.2785 17.87 21.1096L16.063 19.9312C15.6365 20.1501 15.1926 20.3343 14.7351 20.4817L14.2908 22.5922C14.2271 22.8946 13.9603 23.1111 13.6512 23.1111H10.3488C10.0397 23.1111 9.77291 22.8946 9.70924 22.5922L9.26492 20.4817C8.80744 20.3343 8.36351 20.1501 7.93701 19.9312L6.13002 21.1096C5.87113 21.2785 5.52937 21.2429 5.31082 21.0243L2.97569 18.6892C2.75714 18.4707 2.72155 18.1289 2.89039 17.87L4.06886 16.063C3.84996 15.6365 3.66575 15.1926 3.51833 14.7351L1.40783 14.2908C1.10539 14.2271 0.888885 13.9603 0.888885 13.6512V10.3488C0.888885 10.0398 1.10539 9.77294 1.40783 9.70927L3.51833 9.26495C3.66575 8.80747 3.84996 8.36355 4.06886 7.93704L2.89039 6.13005ZM12 16.5752C9.4732 16.5752 7.42483 14.5268 7.42483 12C7.42483 9.47323 9.4732 7.42486 12 7.42486C14.5268 7.42486 16.5752 9.47323 16.5752 12C16.5752 14.5268 14.5268 16.5752 12 16.5752ZM15.268 12C15.268 13.8049 13.8048 15.268 12 15.268C10.1951 15.268 8.73202 13.8049 8.73202 12C8.73202 10.1952 10.1951 8.73205 12 8.73205C13.8048 8.73205 15.268 10.1952 15.268 12Z"
+            fill="#CDCED1" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">Settings</span>
+      </a>
+    </li>
+    <li class="d-flex align-items-center">
+      <a routerLink="/tutor/payment-records" routerLinkActive="active">
+        <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M3.75 3.75H22.5V8.75H2.5V5C2.5 4.30964 3.05964 3.75 3.75 3.75ZM2.5 11.25H26.25C26.9404 11.25 27.5 11.8096 27.5 12.5V25C27.5 25.6904 26.9404 26.25 26.25 26.25H3.75C3.05964 26.25 2.5 25.6904 2.5 25V11.25ZM18.75 20V17.5H22.5V20H18.75Z"
+            fill="#A7AAB2" />
+        </svg>
+        <span class="text-uppercase hide-sidemenu">Payment records</span>
+      </a>
+    </li>
+  </ul>
+  <button class="logout text-uppercase" mat-button (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span class="hide-sidemenu">Logout</span>
+  </button>
+</div>

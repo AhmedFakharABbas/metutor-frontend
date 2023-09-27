@@ -1,0 +1,40 @@
+.confirm-block {
+  h1 {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    color: #7d7d7d;
+    font-size: 15px;
+  }
+
+  .close-btn {
+    float: right;
+    min-width: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .resend-btn {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 45px;
+    padding: 0 20px;
+  }
+}
+
+@media(max-width:767px) {
+  .confirm-block {
+    h1 {
+      font-size: 17px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

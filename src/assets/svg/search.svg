@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <filter id="r9nhqym6ba">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+        <path id="in7q02n83b" d="M7 1.333c3.13 0 5.667 2.537 5.667 5.667 0 1.325-.455 2.543-1.217 3.508l3.021 3.02c.26.26.26.683 0 .943-.26.26-.682.26-.942 0l-3.02-3.02c-.966.761-2.184 1.216-3.509 1.216-3.13 0-5.667-2.537-5.667-5.667S3.87 1.333 7 1.333zm0 1.334c-2.393 0-4.333 1.94-4.333 4.333 0 2.393 1.94 4.333 4.333 4.333 1.187 0 2.262-.477 3.044-1.25l.018-.021.02-.02c.774-.78 1.251-1.855 1.251-3.042 0-2.393-1.94-4.333-4.333-4.333z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g filter="url(#r9nhqym6ba)" transform="translate(-940 -350) translate(-1 86) translate(212 242) translate(713 10)">
+                        <g transform="translate(16 12)">
+                            <path d="M0 0H16V16H0z"/>
+                            <use fill="#CACACA" fill-rule="nonzero" xlink:href="#in7q02n83b"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

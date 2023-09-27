@@ -1,0 +1,11 @@
+<div class="student-navbar">
+  <div class="d-flex justify-content-between align-items-center">
+    <h3 class="text-uppercase m-0">{{ getTitle() }}</h3>
+    <div class="icons">
+      <img src="assets/svg/mail-b.svg" draggable="false" width="25" height="25" alt="">
+      <img src="assets/svg/notification.svg" draggable="false" width="25" height="25" alt="">
+      <img [src]="authService.decodeToken()?.avatar" meTutorsDefaultAvatar alt="" class="rounded-circle"
+        draggable="false" width="40" height="40">
+    </div>
+  </div>
+</div>

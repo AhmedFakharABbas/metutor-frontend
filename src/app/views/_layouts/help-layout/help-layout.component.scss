@@ -1,0 +1,21 @@
+.sidemenu {
+  padding: 50px 0;
+  background: #2d3E49;
+
+  ul li {
+    width: 260px;
+
+    a {
+      display: block;
+      color: #ffffff;
+      font-size: 17px;
+      padding: 15px;
+      border-bottom: 1px solid rgba(226, 226, 226, 0.16);
+
+      &.active {
+        border-right: 6px solid #3bb3c1;
+        font-weight: bold;
+      }
+    }
+  }
+}

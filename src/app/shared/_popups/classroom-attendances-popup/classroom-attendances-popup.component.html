@@ -1,0 +1,163 @@
+<div class="classroom-attendances-popup">
+  <div class="d-flex" mat-dialog-title>
+    <h2 class="flex-grow-1 m-0 d-flex flex-column">
+      Classroom attendances
+      <span class="d-block mt-2">View classroom attendances</span>
+    </h2>
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content class="pt-2">
+    <div class="row">
+      <div class="col-12">
+        <div class="card classroom-item">
+          <div class="row">
+            <div class="col">
+              <div
+                class="position-relative rounded date d-flex flex-column align-items-center justify-content-center h-100">
+                <img src="assets/svg/calendar-fill.svg" alt="" width="30" height="30" />
+                <h2 class="mt-2">Starting date</h2>
+                <h3>23 Feb 20</h3>
+                <h4 class="m-0">Ending date: 30 Mar 20</h4>
+              </div>
+            </div>
+            <div class="col-md-9 d-flex flex-column">
+              <h5 class="card-title d-flex align-items-center m-0 h-100">
+                The Web Developer Bootcamp 2020
+                <!-- <img src="assets/svg/user-one.svg" draggable="false" *ngIf="!classroom.isGroup" width="25px"
+                  height="25px" /> -->
+                <img src="assets/svg/user-group.svg" matTooltip="One-o-One" matTooltipPosition="above" draggable="false"
+                  height="25px" />
+              </h5>
+              <p>
+                Very few destinations in Marrakech are blessed with Very few destinations in Marrakech
+                are blessed with beautiful natural scenery, a unique culture, and unmatched
+              </p>
+              <div class="row list rounded">
+                <div class="col-md-4 d-flex menu align-items-center">
+                  <img src="assets/svg/calendar.svg" alt="" width="15" height="15" draggable="false">
+                  <strong>Days: </strong>
+                  <span>Fri, Sat, Sun</span>
+                </div>
+                <div class="col-md-4 d-flex menu align-items-center">
+                  <img src="assets/svg/checkbox-circle-fill.svg" alt="" width="15" height="15" draggable="false">
+                  <strong>Completed classes: </strong>
+                  <span>15</span>
+                </div>
+                <div class="col-md-4 d-flex menu align-items-center">
+                  <img src="assets/svg/timer.svg" alt="" width="15" height="15" draggable="false">
+                  <strong>Total hour: </strong>
+                  <span>30hrs</span>
+                </div>
+                <div class="col-md-4 d-flex menu align-items-center">
+                  <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+                  <strong>Time: </strong>
+                  <span>6pm : 8pm (2 hours)</span>
+                </div>
+                <div class="col-md-4 d-flex menu align-items-center">
+                  <img src="assets/svg/play-circle-fill.svg" alt="" width="15" height="15" draggable="false">
+                  <strong>Remining classes: </strong>
+                  <span>13</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-4">
+        <mat-tab-group mat-align-tabs="start">
+          <mat-tab label="Tutor attendances">
+            <div class="table-responsive mt-2">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Classroom</th>
+                    <th scope="col">Attending states</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Understanding Operating Systems</td>
+                    <td>
+                      <button mat-button>Check in</button>
+                    </td>
+                    <td>Introduction </td>
+                    <td>08 Feb 2020</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Understanding Operating Systems</td>
+                    <td>
+                      <button mat-button>Check in</button>
+                    </td>
+                    <td>Introduction </td>
+                    <td>08 Feb 2020</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Understanding Operating Systems</td>
+                    <td>
+                      <button mat-button>Check in</button>
+                    </td>
+                    <td>Introduction </td>
+                    <td>08 Feb 2020</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-tab>
+          <mat-tab label="My attendances">
+            <div class="table-responsive mt-2">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Classroom</th>
+                    <th scope="col">Attending states</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Understanding Operating Systems</td>
+                    <td>
+                      <button mat-button>Check in</button>
+                    </td>
+                    <td>Introduction </td>
+                    <td>08 Feb 2020</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Understanding Operating Systems</td>
+                    <td>
+                      <button mat-button>Check in</button>
+                    </td>
+                    <td>Introduction </td>
+                    <td>08 Feb 2020</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">1</td>
+                    <td>Understanding Operating Systems</td>
+                    <td>
+                      <button mat-button>Check in</button>
+                    </td>
+                    <td>Introduction </td>
+                    <td>08 Feb 2020</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

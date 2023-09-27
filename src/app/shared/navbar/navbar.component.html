@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg text-16" id="home-header" [class.header-fixed]="scrollTop">
+  <div class="container">
+    <div class="d-flex flex-grow-1 mobile_menu">
+      <span class="w-100 d-lg-none d-block"></span>
+      <a class="navbar-brand-two" routerLink="/">
+        <img alt="logo" src="assets/logo/logo-dark.png" width="200px" draggable="false">
+      </a>
+    </div>
+    <div class="flex-grow-1">
+      <ul class="navbar-nav ml-auto flex-nowrap float-right">
+        <li class="nav-item">
+          <a class="nav-link nav-item-link" [matMenuTriggerFor]="serviceMenu">
+            Services
+            <img src="assets/svg/b-chevron.svg" alt="" draggable="false">
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-item-link" routerLink="/student-success" routerLinkActive="active">
+            Student Success
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-item-link" routerLink="/become-tutor" routerLinkActive="active">
+            Become A Tutor
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!authService.getIsAuth()">
+          <a class="nav-link nav-item-link" routerLink="/signin" routerLinkActive="active">
+            Sign in
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="authService.getIsAuth()">
+          <a class="nav-link nav-item-link" [routerLink]="'/' + authService.getIsStudentAuth() ? 'student' : 'tutor'"
+            routerLinkActive="active">
+            My Classroom
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-item-link" routerLinkActive="active">
+            <img src="assets/svg/language.svg" alt="" draggable="false">
+            <span class="lang">En</span>
+            <img src="assets/svg/b-chevron.svg" alt="" draggable="false">
+          </a>
+        </li>
+        <li class="nav-item btn-nav d-flex align-items-center justify-content-center">
+          <a class="link-btn login" mat-flat-button color="primary">Book a Class</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<mat-menu #serviceMenu="matMenu">
+  <a [routerLink]="'/' + cat?.slug" mat-menu-item *ngFor="let cat of categories">{{ cat?.name }}</a>
+</mat-menu>

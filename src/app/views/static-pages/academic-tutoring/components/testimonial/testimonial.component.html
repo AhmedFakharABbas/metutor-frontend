@@ -1,0 +1,49 @@
+<div class="row testimonial">
+  <div class="col-md-12">
+    <span class="text-uppercase">TESTIMONIAL</span>
+    <h1>What our students Say about Us</h1>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let testmonial of testmonials">
+            <div class="card">
+              <div class="card-body">
+                <div class="row info">
+                  <div class="col-md-2 d-flex align-items-center">
+                    <img [src]="testmonial?.profile_pic" meTutorsDefaultAvatar class="rounded-circle" alt="">
+                  </div>
+                  <div class="col-md-10 d-flex justify-content-center flex-column">
+                    <h2>{{ testmonial?.posted_by }}</h2>
+                    <h3>{{ testmonial?.posted_date | date }}</h3>
+                  </div>
+                </div>
+                <p>
+                  <q>{{ testmonial?.content }}</q>
+                </p>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+      <!-- <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="row info">
+              <div class="col-md-2 d-flex align-items-center">
+                <img src="assets/homepage/courses/person.png" meTutorsDefaultAvatar class="rounded-circle" alt="">
+              </div>
+              <div class="col-md-10 d-flex justify-content-center flex-column">
+                <h2>David Stevenson</h2>
+                <h3>Expert & engineering tutor</h3>
+              </div>
+            </div>
+            <p>
+              “Their UI/UX skills and experience, were key to identifying potential friction points within our Business
+              Processes, which they fixed or streamlined beautifull”.
+            </p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

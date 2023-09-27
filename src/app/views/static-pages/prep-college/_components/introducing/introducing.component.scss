@@ -1,0 +1,38 @@
+.introducing {
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  span {
+    color: #3bb3c1;
+    background-color: rgba(59, 179, 193, 0.12);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #2a2a2a;
+  }
+
+  p {
+    font-size: 18px;
+    color: #5a7184;
+  }
+}
+
+@media (max-width:767px) {
+  .introducing {
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

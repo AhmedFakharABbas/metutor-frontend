@@ -1,0 +1,25 @@
+.about-me {
+  p {
+    color: #44444f;
+    font-size: 14px;
+    border-bottom: solid 1px #e2e2ea;
+    padding-bottom: 15px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+
+    img {
+      margin-right: 10px;
+    }
+
+    span {
+      font-size: 14px;
+      color: #171725;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

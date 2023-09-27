@@ -1,0 +1,30 @@
+<div class="row testimonial">
+  <div class="col-md-12">
+    <span class="text-uppercase">TESTIMONIAL</span>
+    <h1>What our students Say about Us</h1>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let testmonial of testmonials">
+            <div class="card">
+              <div class="card-body">
+                <div class="row info">
+                  <div class="col-3 col-md-2 d-flex align-items-center">
+                    <img [src]="testmonial?.profile_pic" meTutorsDefaultAvatar class="rounded-circle" alt="">
+                  </div>
+                  <div class="col-9 col-md-10 d-flex justify-content-center flex-column">
+                    <h2>{{ testmonial?.posted_by }}</h2>
+                    <h3>{{ testmonial?.posted_date | date }}</h3>
+                  </div>
+                </div>
+                <p>
+                  <q>{{ testmonial?.content }}</q>
+                </p>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>

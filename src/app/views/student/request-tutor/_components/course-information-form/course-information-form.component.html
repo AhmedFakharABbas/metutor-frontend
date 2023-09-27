@@ -1,0 +1,137 @@
+<form [formGroup]="form" class="card course-info" (ngSubmit)="onSubmit(form)">
+  <div class="card-body">
+    <div class="row row-block">
+      <div class="col-md-4">
+        <h2>Course Details</h2>
+        <h4>Select industry & Topics, language,</h4>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Course level</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select formControlName="courseLevel" [placeholder]="'Choose level'">
+                <mat-option [value]="level?.code" *ngFor="let level of courseLevel">
+                  {{ level?.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <h3>Course field</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select formControlName="courseField" [placeholder]="'Choose field'">
+                <mat-option [value]="field?.code" *ngFor="let field of courseField">
+                  {{ field?.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h3>Prefered tutoring language</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select formControlName="preferedTutoringLanguage" [placeholder]="'Choose language'">
+                <mat-option [value]="lang?.id" *ngFor="let lang of languages">
+                  {{ lang?.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <h3>Subject</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select formControlName="subject" [placeholder]="'Choose subject'">
+                <ng-container *ngFor="let subject of subjects">
+                  <mat-option [value]="subject?.code" *ngIf="+subject?.course_field === +field?.value">
+                    {{ subject?.name }}
+                  </mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-block">
+      <div class="col-md-4">
+        <h2>Textbook Details</h2>
+        <h4>Insert textbook information if you have</h4>
+      </div>
+      <div class="col-md-8">
+        <mat-radio-group aria-label="Select an option" (change)="onChange($event)" formControlName="information">
+          <mat-radio-button class="w-100" [value]="academicTutoringTextbook.later">
+            Will provide textbook later
+          </mat-radio-button>
+
+          <mat-radio-button class="w-100" [value]="academicTutoringTextbook.pdf">
+            Upload textbook in pdf
+          </mat-radio-button>
+          <div class="row my-3" [@slideInOut] *ngIf="information.value === academicTutoringTextbook.pdf">
+            <div class="col-md-6 upload-textbook">
+              <div class="row">
+                <div class="col">
+                  <h5>Upload Textbook</h5>
+                  <h6>PDF only with Max size of 5M</h6>
+                </div>
+                <input type="file" hidden #filePicker accept="application/pdf" (change)="onFileUpload($event)">
+                <button mat-button type="button" (click)="filePicker.click()">
+                  <mat-icon>cloud_upload</mat-icon>
+                  Upload file
+                </button>
+              </div>
+            </div>
+            <div class="col-md-12" *ngIf="filePreview">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="block-file d-flex mt-3 align-items-center">
+                    <mat-icon>attach_file</mat-icon>
+                    <div class="ml-2">
+                      <h3>{{ filePreview?.name }}</h3>
+                      <h5>{{ filePreview?.size }}</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <mat-radio-button class="w-100" [value]="academicTutoringTextbook.info">
+            My textbook details listed below
+          </mat-radio-button>
+          <div class="row my-3" [@slideInOut] *ngIf="information.value === academicTutoringTextbook.info">
+            <div class="col-md-4">
+              <h3>Textbook name</h3>
+              <input type="text" formControlName="name" class="form-control" placeholder="Type name">
+            </div>
+            <div class="col-md-4">
+              <h3>Textbook edition</h3>
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select formControlName="edition" [placeholder]="'Choose edition'">
+                  <mat-option [value]="edition.key" *ngFor="let edition of textbookEditions | keyvalue: returnZero">
+                    {{ edition.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <h3>Textbook author</h3>
+              <input type="text" formControlName="author" class="form-control" placeholder="Type author">
+            </div>
+          </div>
+        </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 overflow-hidden">
+        <button mat-flat-button color="primary" class="float-right" type="submit" [disabled]="form.invalid">
+          Save & continue
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

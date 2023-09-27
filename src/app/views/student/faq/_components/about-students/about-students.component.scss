@@ -1,0 +1,53 @@
+.about-students {
+  background-color: rgb(59 179 193 / 6%);
+  padding: 70px 0;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #2a2a2a;
+  }
+
+  p {
+    font-size: 20px;
+    color: #696969;
+  }
+
+  .form-block {
+    box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.06);
+
+    mat-icon {
+      position: absolute;
+      top: 18px;
+      left: 15px;
+      color: #959ead;
+    }
+
+    input {
+      font-size: 15px;
+      padding: 20px 80px 20px 45px;
+      border: none;
+      height: 60px;
+      color: #696969;
+    }
+
+    button {
+      position: absolute;
+      right: 5px;
+      top: 12px;
+    }
+  }
+
+  h2 {
+    color: rgb(42 42 42 / 60%);
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0 0;
+  }
+}
+
+@media (max-width:767px) {
+  .about-students h1 {
+    font-size: 25px;
+  }
+}

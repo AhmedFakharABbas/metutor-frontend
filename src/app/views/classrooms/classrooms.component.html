@@ -1,0 +1,7 @@
+<ng-container *ngIf="course">
+  <metutors-slide [course]="course"></metutors-slide>
+  <div class="container">
+    <metutors-list-classrooms [isLoading]="isLoading" [filterForm]="filterForm" [classrooms]="classrooms"
+      [count]="count" (submitFilters)="onFilter($event)"></metutors-list-classrooms>
+  </div>
+</ng-container>

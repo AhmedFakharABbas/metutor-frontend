@@ -1,0 +1,110 @@
+.dashboard {
+  padding: 20px 40px;
+
+  .overview {
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .desc {
+    color: #5e6c84;
+    font-size: 15px;
+
+    strong {
+      font-size: 14px;
+    }
+  }
+
+  .list-cards {
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    .card {
+      height: 100%;
+      border-bottom: 5px solid #3bb3c1;
+
+      &.orange-bo {
+        border-bottom: 5px solid #ff554b;
+      }
+
+      &.red-bo {
+        border-bottom: 5px solid #ff8300;
+      }
+
+      &.purple-bo {
+        border-bottom: 5px solid #be63f9;
+      }
+
+      h3 {
+        color: #171725;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        color: #171725;
+        font-size: 25px;
+        font-weight: bold;
+
+        span {
+          color: #3dd598;
+          font-size: 15px;
+
+          &.danger {
+            color: #fc5a5a;
+          }
+        }
+      }
+
+      p {
+        color: #696974;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .card-item {
+    padding-left: 15px;
+
+    h1 {
+      color: #2a2a2a;
+      font-weight: bold;
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    h3 {
+      color: #3bb3c1;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .count {
+      color: #FF8E18;
+      font-weight: bold;
+      font-size: 15px;
+      margin-left: 10px;
+    }
+
+    .review {
+      color: #949494;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    h4 {
+      color: #2a2a2a;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    h5 {
+      color: #5e6c84;
+      font-size: 13px;
+    }
+  }
+}

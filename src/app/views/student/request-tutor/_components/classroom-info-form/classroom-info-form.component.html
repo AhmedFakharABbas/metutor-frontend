@@ -1,0 +1,113 @@
+<form [formGroup]="form" class="card classroom-info" (ngSubmit)="onSubmit(form)">
+  <div class="card-body">
+    <div class="row row-block">
+      <div class="col-md-4">
+        <h2>Classroom information</h2>
+        <h4>Insert classroom all information </h4>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Starting date</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <input matInput [matDatepicker]="startPicker" [placeholder]="'Choose a date'" (focus)="startPicker.open()"
+                [min]="minDate" (dateChange)="onChangeDateDay(); onChangeDate()" formControlName="startDate">
+              <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+              <mat-datepicker #startPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <h3>Ending date</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <input matInput [matDatepicker]="endPicker" [placeholder]="'Choose a date'" (focus)="endPicker.open()"
+                [min]="startDate?.value" (dateChange)="onChangeDateDay(); onChangeDate()" formControlName="endDate">
+              <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+              <mat-datepicker #endPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h3>Days</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select formControlName="days" [placeholder]="'Choose days'" multiple
+                (selectionChange)="onChangeDateDay()">
+                <mat-option [value]="day" [disabled]="checkDisabledDays(day)"
+                  *ngFor="let day of listDays; let i = index">
+                  {{ day }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <h3>Type of classroom</h3>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-select formControlName="type" (selectionChange)="onChangeType()" [placeholder]="'Choose type'">
+                <mat-option [value]="type.key" *ngFor="let type of types | keyvalue: returnZero">
+                  {{ type.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h3>Starting time</h3>
+            <p-calendar formControlName="startTime" placeholder="Select starting time" [timeOnly]="true"
+              [hourFormat]="12" inputId="timeonly" (onClose)="onCloseCalendar()">
+            </p-calendar>
+          </div>
+          <div class="col-md-6">
+            <h3>Ending time</h3>
+            <p-calendar formControlName="endTime" placeholder="Select ending time" [hourFormat]="12" [timeOnly]="true"
+              inputId="timeonly" (onClose)="onCloseCalendar()"></p-calendar>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h3>Duration</h3>
+            <input type="text" class="form-control" formControlName="duration">
+          </div>
+          <div class="col-md-6">
+            <h3>Total hours</h3>
+            <input type="text" class="form-control" formControlName="hours">
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h3>Total classes</h3>
+            <input type="text" class="form-control" formControlName="totalClasses">
+          </div>
+          <div class="col-md-6" *ngIf="showSeatAttendees">
+            <h3>Seat attendees</h3>
+            <input type="number" max="10" min="1" step="1" class="form-control" formControlName="seatAttendees">
+          </div>
+        </div>
+        <div class="row mt-4" *ngIf="price" [@slideInOut]>
+          <div class="col-md-12">
+            <div class="d-flex est-price">
+              <div class="flex-grow-1">
+                <h5>Estimated price:</h5>
+                <p>Price change based on total hours, total classess, time</p>
+              </div>
+              <h1>{{ price | currency: 'USD' }}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12 overflow-hidden">
+        <button mat-flat-button color="primary" class="float-right" [disabled]="form.invalid" type="submit">
+          Save & continue
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+        <button mat-button class="float-right back-btn" type="button" (click)="onBack.emit()">
+          <mat-icon>arrow_back</mat-icon>
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

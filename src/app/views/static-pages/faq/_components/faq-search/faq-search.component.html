@@ -1,0 +1,23 @@
+<div class="about-students">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12">
+        <h1>{{ title }}</h1>
+        <p>
+          From enrollment to graduation, we’re here with you every step of the way!
+        </p>
+      </div>
+      <div class="col-md-6 offset-md-3">
+        <div class="form-block position-relative rounded">
+          <mat-icon>search</mat-icon>
+          <input type="text" placeholder="Ask a questions..." class="w-100 rounded" (keyup)="filterFAQ(searchKey.value)"
+            #searchKey>
+          <button mat-flat-button color="primary" (click)="filterFAQ(searchKey.value)">Search</button>
+        </div>
+      </div>
+      <div class="col-12">
+        <h2>*We are collect your searching keywords to improve our FAQ</h2>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="confirm-delete">
+  <div class="d-flex" mat-dialog-title>
+    <h2 class="flex-grow-1 m-0 d-flex flex-column">
+      Delete classroom
+    </h2>
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div mat-dialog-content>
+    <p>Are you sure to delete this classroom for this course?</p>
+  </div>
+  <div mat-dialog-actions class="justify-content-center">
+    <button mat-button [mat-dialog-close]="data.id" class="btn-confirm" cdkFocusInitial>Delete classroom</button>
+  </div>
+</div>

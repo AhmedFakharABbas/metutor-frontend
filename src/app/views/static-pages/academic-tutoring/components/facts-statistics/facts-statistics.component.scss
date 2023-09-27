@@ -1,0 +1,65 @@
+.facts-statistics {
+  background-color: rgba(59, 179, 193, 0.04);
+  padding: 70px 0;
+
+  h2 {
+    color: #183b56;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 17px;
+    color: #5a7184;
+  }
+
+  .card {
+    img {
+      background: rgb(179 186 197 / 10%);
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    h3 {
+      color: #183b56;
+      font-weight: bold;
+      font-size: 30px;
+      margin-top: 25px;
+    }
+
+    h4 {
+      color: #949494;
+      font-size: 17px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .facts-statistics {
+    padding: 20px 0;
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .card {
+      margin-bottom: 10px;
+      text-align: center;
+
+      h3 {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      h4 {
+        font-size: 15px;
+      }
+    }
+  }
+}

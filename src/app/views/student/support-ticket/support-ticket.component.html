@@ -1,0 +1,68 @@
+<div class="support-ticket">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="title">My Tickets</h2>
+    </div>
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>Create new ticket</h3>
+          <form class="row" [formGroup]="supportForm" (ngSubmit)="onSubmit(supportForm)">
+            <div class="col-md-6">
+              <label for="topic">Topic *</label>
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select formControlName="type" [placeholder]="'Choose topic'">
+                  <mat-option [value]="ticket?.id" *ngFor="let ticket of ticketsList">
+                    {{ ticket?.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" class="form-control custom-input" placeholder="Type subject here"
+                formControlName="title">
+            </div>
+            <div class="col-md-12 mt-4">
+              <label for="details">Ticket details *</label>
+              <textarea id="details" class="form-control custom-input" rows="10"
+                formControlName="description"></textarea>
+            </div>
+
+            <div class="col-md-12 mt-4 mb-2">
+              <div class="row">
+                <p class="col mr-5 mb-0">
+                  You can include files (documents, screen recordings, screenshots, crash logs, etc.)
+                  Please make sure the correct sharing permissions have been set.
+                </p>
+                <div class="block-file d-flex mr-3 align-items-center" *ngIf="filePreview">
+                  <mat-icon>attach_file</mat-icon>
+                  <div class="ml-2">
+                    <h3>{{ filePreview?.name }}</h3>
+                    <h5>{{ filePreview?.size }}</h5>
+                  </div>
+                </div>
+                <div class="file-upload d-flex align-items-center col-md-3" (click)="filePicker.click()">
+                  <img src="assets/svg/upload.svg" alt="" draggable="false" width="25" height="25">
+                  <div>
+                    <h2>Attach file</h2>
+                    <h3>accept .jpg, .png, .pdf</h3>
+                  </div>
+                  <input type="file" hidden #filePicker (change)="onFileUpload($event)">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 mt-5">
+              <button mat-flat-button color="primary" class="py-2 float-right" cdkFocusInitial type="submit"
+                [disabled]="supportForm.invalid || loading">
+                Send message
+                <mat-icon class="spinner" *ngIf="loading">autorenew</mat-icon>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

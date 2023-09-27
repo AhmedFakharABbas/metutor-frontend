@@ -1,0 +1,97 @@
+<div class="card classroom-item">
+  <div class="row">
+    <div class="col">
+      <div class="position-relative rounded date d-flex flex-column align-items-center justify-content-center h-100">
+        <img src="assets/svg/calendar-fill.svg" alt="" width="30" height="30" />
+        <h2 class="mt-2">Starting date</h2>
+        <h3>{{ classroom?.startDate | date }}</h3>
+        <h4 class="m-0">Ending date: {{ classroom?.expectedEndDate | date }}</h4>
+      </div>
+    </div>
+    <div class="col-md-9 d-flex flex-column">
+      <h5 class="card-title d-flex align-items-center m-0 h-100">
+        {{ classroom?.name }}
+        <img src="assets/svg/user-one.svg" draggable="false" *ngIf="classroom?.type === classroomType.one" width="25px"
+          height="25px" />
+        <img src="assets/svg/user-group.svg" draggable="false" *ngIf="classroom?.type === classroomType.group"
+          width="25px" height="25px" />
+      </h5>
+      <div class="row list rounded">
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/calendar.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Days: </strong>
+          <span>
+            <ng-container *ngFor="let day of classroom?.listDays; let isLast = last">
+              {{ day }}
+              <ng-container *ngIf="!isLast"> - </ng-container>
+            </ng-container>
+          </span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/checkbox-circle-fill.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Completed classes: </strong>
+          <span>{{ classroom?.completedClasses }}</span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/timer.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Total hour: </strong>
+          <span>{{ classroom?.totalHours }}hrs</span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Time: </strong>
+          <span>
+            {{ classroom?.startETime | date: 'h a' }} : {{ classroom?.endETime | date: 'h a' }}
+            ({{ calculateDurationTime(classroom?.startETime, classroom?.endETime) }} hours)
+          </span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/play-circle-fill.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Remining classes: </strong>
+          <span>{{ classroom?.remainingClasses }}</span>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-4 d-flex align-items-center info">
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center">
+              <img [src]="classroom?.tutor?.avatar" meTutorsDefaultAvatar alt="">
+            </div>
+            <div class="col-md-9 d-flex justify-content-center flex-column">
+              <h2 class="d-flex">
+                {{ classroom?.tutor?.name }}
+                <div class="d-flex">
+                  <img src="assets/svg/star-fill.svg" alt="" width="20" height="20" draggable="false" />
+                  <span class="count">{{ classroom?.tutor?.rate }}</span>
+                </div>
+              </h2>
+              <h3>{{ classroom?.tutor?.major }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 in-progress">
+          <h3>In progress</h3>
+          <div class="d-flex align-items-center">
+            <div class="flex-grow-1">
+              <mat-progress-bar class="example-margin" [color]="classroom?.progress > 30 ? 'primary' : 'warn'"
+                [value]="classroom?.progress">
+              </mat-progress-bar>
+            </div>
+            <strong>{{ classroom?.progress }}%</strong>
+          </div>
+        </div>
+        <div class="col flex-grow-1">
+          <div class="row">
+            <div class="col-md-12">
+              <a [routerLink]="'/student/classroom/syllabus/' + classroom?.id" mat-flat-button color="primary"
+                class="h-100 book-classroom float-right">
+                Continue
+                <mat-icon>arrow_forward</mat-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

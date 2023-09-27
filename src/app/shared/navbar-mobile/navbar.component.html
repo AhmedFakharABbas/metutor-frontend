@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg text-16" id="home-header" [class.header-fixed]="scrollTop">
+  <div class="container p-0">
+    <div class="d-flex align-items-center w-100 m-0">
+      <a class="flex-grow-1" routerLink="/">
+        <img alt="logo" src="assets/logo/logo-dark.png" width="200px">
+      </a>
+      <a class="d-flex align-items-center" (click)="showSidebar = true">
+        <mat-icon>dashboard</mat-icon>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<p-sidebar [(visible)]="showSidebar" position="right" [baseZIndex]="10000">
+  <div class="content d-flex flex-column">
+    <ul class="list-unstyled margin-top-20 list-links-sidebar d-flex flex-column flex-grow-1">
+      <div class="flex-grow-1">
+        <li>
+          <a class="d-flex align-items-center" (click)="openCategories = !openCategories">
+            <span class="flex-grow-1">Services</span>
+            <mat-icon class="chevron">{{ openCategories ? 'expand_less' : 'expand_more' }}</mat-icon>
+          </a>
+          <div class="categories" [@slideInOut] *ngIf="openCategories">
+            <a class="d-flex align-items-center" [routerLink]="'/' + cat?.slug" routerLinkActive="active"
+              (click)="showSidebar = false" *ngFor="let cat of categories">
+              <span class="flex-grow-1">{{ cat?.name }}</span>
+              <mat-icon class="chevron">chevron_right</mat-icon>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/student-success" routerLinkActive="active" class="d-flex align-items-center"
+            (click)="showSidebar = false">
+            <span class="flex-grow-1">Student Success</span>
+            <mat-icon class="chevron">chevron_right</mat-icon>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/become-tutor" routerLinkActive="active" class="d-flex align-items-center"
+            (click)="showSidebar = false">
+            <span class="flex-grow-1">Become A Tutor</span>
+            <mat-icon class="chevron">chevron_right</mat-icon>
+          </a>
+        </li>
+        <li *ngIf="!authService.getIsAuth()">
+          <a routerLink="/signin" routerLinkActive="active" class="d-flex align-items-center"
+            (click)="showSidebar = false">
+            <span class="flex-grow-1">Sign in</span>
+            <mat-icon class="chevron">chevron_right</mat-icon>
+          </a>
+        </li>
+        <li *ngIf="authService.getIsAuth()">
+          <a [routerLink]="'/' + authService.getIsStudentAuth() ? 'student' : 'tutor'" routerLinkActive="active"
+            class="d-flex align-items-center" (click)="showSidebar = false">
+            <span class="flex-grow-1">My Classroom</span>
+            <mat-icon class="chevron">chevron_right</mat-icon>
+          </a>
+        </li>
+        <!-- <li>
+        <a routerLink="/logs" routerLinkActive="active" class="d-flex align-items-center" (click)="showSidebar = false">
+          <span class="flex-grow-1">السجلات</span>
+          <mat-icon class="chevron">chevron_right</mat-icon>
+        </a>
+      </li> -->
+      </div>
+      <li>
+        <a class="d-flex align-items-center" (click)="showSidebar = false">
+          <a class="link-btn login flex-grow-1" mat-flat-button color="primary">Book a Class</a>
+        </a>
+      </li>
+    </ul>
+  </div>
+</p-sidebar>

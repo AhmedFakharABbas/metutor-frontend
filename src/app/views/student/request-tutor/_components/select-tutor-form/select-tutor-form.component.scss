@@ -1,0 +1,139 @@
+:host ::ng-deep .select-tutor {
+  border-radius: 12px;
+  border: solid 1px #e2e2e2;
+  box-shadow: none;
+
+  h2 {
+    color: #2a2a2a;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  h4 {
+    color: #696969;
+    font-size: 18px;
+  }
+
+  .ph-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .list-tutors {
+    .img-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 10px 0 20px;
+
+      img {
+        border-radius: 50%;
+      }
+
+      .status {
+        right: 5px;
+        top: 5px;
+
+        &.is-online circle {
+          fill: #00ab1e;
+        }
+
+        &.is-offline circle {
+          fill: #949494;
+        }
+
+        &.is-busy circle {
+          fill: #ad0909;
+        }
+
+        &.is-away circle {
+          fill: #da9312;
+        }
+      }
+    }
+
+    h2 {
+      color: #2a2a2a;
+      font-size: 15px;
+
+      span {
+        color: #fff;
+        font-size: 12px;
+        padding: 3px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        &.pro {
+          background-color: #949494;
+        }
+
+        &.verified {
+          background-color: #007cff;
+        }
+      }
+    }
+
+    h3 {
+      color: #7d7d7d;
+      font-size: 13px;
+    }
+
+    .mat-radio-label {
+      border-bottom: 1px solid #e2e2e2;
+      padding: 15px 10px;
+    }
+
+    .mat-radio-label-content {
+      width: 100%;
+    }
+
+    .count {
+      color: #FF8E18;
+      font-weight: bold;
+      font-size: 15px;
+      margin-left: 10px;
+    }
+
+    .review {
+      color: #949494;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+    .list {
+      margin: 20px 0;
+
+      span {
+        color: #949494;
+        font-size: 13px;
+      }
+
+      .icon {
+        margin-right: 5px;
+        width: auto;
+      }
+    }
+
+    .full-profile {
+      color: #3bb3c1;
+
+      &:hover {
+        color: #3bb3c1;
+      }
+    }
+  }
+
+  button {
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 20px;
+
+    &.back-btn {
+      margin-right: 10px;
+      border: solid 1px #3bb3c1;
+      color: #3bb3c1;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="explore-courses" style="background-image: url('assets/courses/learn-english.png');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Explore Language courses</h1>
+        <p>
+          Very few destinations in Marrakech are blessed with beautiful natural scenery,
+          a unique culture, and unmatched experiences.
+        </p>
+      </div>
+      <div class="col-md-9 mt-4">
+        <form [formGroup]="filterForm" (ngSubmit)="submit(filterForm)">
+          <div class="form-block position-relative rounded">
+            <input type="text" formControlName="key" placeholder="Search by course name, desc, category"
+              class="w-100 rounded">
+            <button mat-flat-button color="primary" type="submit">
+              <img src="assets/svg/search.svg" alt="" draggable="false" width="16" height="16" />
+              Find courses
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

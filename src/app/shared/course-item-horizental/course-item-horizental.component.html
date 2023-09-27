@@ -1,0 +1,65 @@
+<div class="card course-item">
+  <div class="row">
+    <div class="col">
+      <div class="position-relative">
+        <img [src]="course?.picture" meTutorsDefaultCourse class="card-img-top rounded" alt width="230" height="230">
+        <label class="badge-item" [ngClass]="{
+          'popular': course?.tag === courseTags.pop,
+          'new': course?.tag === courseTags.new,
+          'top': course?.tag === courseTags.top
+        }">{{ course?.tag }}</label>
+      </div>
+    </div>
+    <div class="col-md-7 d-flex flex-column">
+      <h5 class="card-title">
+        {{ course?.name }}
+        <img src="assets/svg/user-one.svg" draggable="false" *ngIf="course?.tuitionType === tuitionType.one"
+          width="25px" height="25px" />
+        <img src="assets/svg/user-group.svg" draggable="false" *ngIf="course?.tuitionType === tuitionType.group"
+          width="25px" height="25px" />
+        <img src="assets/svg/user-both.svg" matTooltip="One-o-One" matTooltipPosition="above" draggable="false"
+          *ngIf="course?.tuitionType === tuitionType.both" height="25px" />
+      </h5>
+      <div>
+        <rating [ngModel]="course?.rate" max="5" [readonly]="true"></rating>
+        <span class="count">{{ course?.rate }}</span>
+        <span class="review">({{ course?.reviewsCount }} review)</span>
+      </div>
+      <p class="desc flex-grow-1" [innerHTML]="course?.description"></p>
+      <div class="row list rounded">
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Total hours:</strong>
+          <span>{{ course?.duration }} hours</span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/class.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Total classroom:</strong>
+          <span>{{ course?.classroomNumber }}</span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/user-formal.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Study type:</strong>
+          <span>{{ course?.tuitionValue }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex flex-column">
+      <h3 class="price flex-grow-1">Price:
+        <strong>{{ course?.priceRange?.min | currency:'USD' }}</strong> to
+        <strong>{{ course?.priceRange?.max | currency:'USD' }}</strong>
+      </h3>
+      <button mat-flat-button color="primary" class="main-button-transparent mb-2"
+        (click)="openCourseDetailsPopop = true">
+        Course details
+      </button>
+      <a mat-flat-button [routerLink]="'/classrooms/' + course?.id" color="primary" class="start-btn">
+        Select classroom
+      </a>
+    </div>
+  </div>
+</div>
+
+<metutors-course-details-popup [openCourseDetailsPopop]="openCourseDetailsPopop" [course]="course"
+  (closeDialog)="openCourseDetailsPopop = $event">
+</metutors-course-details-popup>

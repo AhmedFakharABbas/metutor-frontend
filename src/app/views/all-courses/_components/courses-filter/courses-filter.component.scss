@@ -1,0 +1,62 @@
+.course-filter {
+  margin-bottom: 20px;
+
+  .heading {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 25px 30px;
+
+    h3 {
+      color: #2a2a2a;
+      font-size: 25px;
+    }
+
+    .clear-btn {
+      color: #3bb3c1;
+      border: 1px solid #e2e2e2;
+      font-size: 18px;
+
+      span.number {
+        background-color: #3bb3c1;
+        color: #FFF;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        line-height: 27px;
+        border-radius: 50%;
+      }
+    }
+
+    .cancel-btn {
+      color: #3bb3c1;
+      font-size: 18px;
+      border-left: 1px solid #e2e2e2;
+
+      button {
+        padding: 0;
+        font-size: 16px;
+        font-weight: bold;
+        min-width: 0;
+      }
+    }
+  }
+
+  .content {
+    padding: 25px 30px;
+
+    h4 {
+      color: #262945;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .number {
+      color: #ff8300;
+      margin: 0 8px;
+    }
+
+    .review {
+      color: #696969;
+      font-size: 15px;
+    }
+  }
+}

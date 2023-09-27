@@ -1,0 +1,38 @@
+<div class="row faq-topics">
+  <div class="col-md-12 text-center">
+    <h1>Select From our topic</h1>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col item">
+        <a routerLink="/faq/{{ ticketCategory.student | lowercase }}" class="card text-center h-100">
+          <div class="card-body">
+            <h4 class="mb-0">About Students</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col item">
+        <a routerLink="/faq/{{ ticketCategory.tutor | lowercase }}" class="card text-center h-100">
+          <div class="card-body">
+            <h4 class="mb-0">About Tutors</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col item">
+        <a routerLink="/faq/{{ ticketCategory.technology | lowercase }}" class="card text-center h-100">
+          <div class="card-body">
+            <h4 class="mb-0">About Technology</h4>
+          </div>
+        </a>
+      </div>
+      <div class="col item">
+        <a routerLink="/faq/{{ ticketCategory.system | lowercase }}" class="card text-center h-100">
+          <div class="card-body">
+            <h4 class="mb-0">About System</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

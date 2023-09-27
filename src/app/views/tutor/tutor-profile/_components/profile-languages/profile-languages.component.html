@@ -1,0 +1,11 @@
+<div class="card languages">
+  <div class="card-body">
+    <h1 class="title">Languages</h1>
+    <ul class="list-unstyled m-0">
+      <li *ngFor="let lang of tutor?.languages">
+        <h2>{{ lang?.name }}</h2>
+        <h3 class="m-0">{{ lang?.level }}</h3>
+      </li>
+    </ul>
+  </div>
+</div>

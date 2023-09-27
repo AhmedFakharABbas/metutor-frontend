@@ -1,0 +1,62 @@
+:host ::ng-deep .customize-classroom {
+  margin-top: 30px;
+
+  h1 {
+    color: #2a2a2a;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon,
+  .mat-stepper-label-position-bottom .mat-stepper-horizontal-line {
+    display: none;
+  }
+
+  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label {
+    padding: 24px;
+    text-align: left;
+
+    &.mat-step-label-selected {
+      border-radius: 8px 8px 0 0;
+      border: solid 1px #e2e2e2;
+      background-color: #ffffff;
+      border-bottom: none;
+    }
+  }
+
+  .mat-step-label-selected .title-info {
+    h4 {
+      color: #3bb3c1;
+    }
+  }
+
+  .title-info {
+    h4 {
+      font-size: 16px;
+      color: #696969;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2a2a2a;
+      text-transform: capitalize;
+    }
+  }
+
+  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after,
+  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before {
+    display: none;
+  }
+
+  .mat-stepper-label-position-bottom .mat-horizontal-stepper-header {
+    flex-grow: 1;
+    padding: 0;
+    pointer-events: none !important;
+  }
+
+  .mat-horizontal-content-container {
+    padding: 0;
+    margin: 0 0 15px;
+  }
+}

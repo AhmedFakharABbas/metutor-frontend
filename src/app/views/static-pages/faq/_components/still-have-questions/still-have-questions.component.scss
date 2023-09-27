@@ -1,0 +1,51 @@
+.still-questions {
+  padding: 20px 15px;
+
+  h1 {
+    font-size: 40px;
+    line-height: normal;
+    color: #000000;
+  }
+
+  p {
+    font-size: 20px;
+    color: #696969;
+    width: 50%;
+    margin: 10px auto 50px;
+  }
+
+  .item {
+    margin-bottom: 10px;
+
+    .card {
+      border-top: 3px solid #3bb3c1;
+    }
+
+    &:nth-child(2) .card {
+      border-color: #ff554b;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #183b56;
+      margin: 15px 0;
+    }
+
+    h4 {
+      font-size: 16px;
+      color: #5a7184;
+    }
+
+    .h-link {
+      color: #3bb3c1;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width:767px) {
+  .still-questions h1 {
+    font-size: 25px;
+  }
+}

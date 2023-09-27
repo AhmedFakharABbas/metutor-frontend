@@ -1,0 +1,79 @@
+<div class="card classroom-item">
+  <div class="row">
+    <div class="col">
+      <div class="position-relative rounded date d-flex flex-column align-items-center justify-content-center h-100">
+        <img src="assets/svg/calendar-fill.svg" alt="" draggable="false" width="30" height="30" />
+        <h2 class="mt-2">Starting date</h2>
+        <h3>{{ classroom?.startDate | date }}</h3>
+        <h4 class="m-0">Ending date: {{ classroom?.expectedEndDate | date }}</h4>
+      </div>
+    </div>
+    <div class="col-md-9 d-flex flex-column">
+      <h5 class="card-title d-flex align-items-center m-0 h-100">
+        <div class="flex-grow-1">
+          {{ classroom?.name }}
+          <img src="assets/svg/user-one.svg" draggable="false" *ngIf="classroom?.type === classroomType.one"
+            width="25px" height="25px" />
+          <img src="assets/svg/user-group.svg" draggable="false" *ngIf="classroom?.type === classroomType.group"
+            width="25px" height="25px" />
+        </div>
+        <h3 class="price m-0"><strong>Price: {{ classroom?.price | currency:'USD' }}</strong></h3>
+      </h5>
+      <div>
+        <rating [ngModel]="classroom?.course?.rate" max="5" [readonly]="true"></rating>
+        <span class="count">{{ classroom?.course?.rate }}</span>
+        <span class="review">({{ classroom?.course?.reviewsCount }} review)</span>
+      </div>
+      <div class="row list rounded">
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/time.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Total hour:</strong>
+          <span>{{ classroom?.totalHours }}hrs</span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/students.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Max students:</strong>
+          <span>{{ classroom?.maxStudentsGroup }}</span>
+        </div>
+        <div class="col-md-4 d-flex menu align-items-center">
+          <img src="assets/svg/class.svg" alt="" width="15" height="15" draggable="false">
+          <strong>Classes:</strong>
+          <span>{{ classroom?.totalClasses }}</span>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-4 d-flex align-items-center info">
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center">
+              <img [src]="classroom?.tutor?.avatar" meTutorsDefaultAvatar alt="">
+            </div>
+            <div class="col-md-9 d-flex justify-content-center flex-column">
+              <h2>{{ classroom?.tutor?.name }}</h2>
+              <h3>{{ classroom?.tutor?.major }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col flex-grow-1">
+          <div class="row">
+            <div class="col-md-12">
+              <button mat-flat-button color="primary" class="h-100 book-classroom float-right">
+                Book Classroom
+              </button>
+              <button mat-flat-button color="primary" class="h-100 details-btn float-right">
+                View schedule
+              </button>
+              <button mat-flat-button color="primary" class="h-100 details-btn float-right"
+                (click)="openClassroomDetailsPopop = true">
+                Course Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<metutors-classroom-details-popup [openClassroomDetailsPopop]="openClassroomDetailsPopop" [classroom]="classroom"
+  (closeDialog)="openClassroomDetailsPopop = $event">
+</metutors-classroom-details-popup>

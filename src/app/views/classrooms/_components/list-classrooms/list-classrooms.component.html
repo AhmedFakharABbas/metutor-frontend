@@ -1,0 +1,68 @@
+<div class="row classrooms">
+  <div class="col-md-7">
+    <h1>Classroom Starting Soon</h1>
+  </div>
+  <div class="col-md-5" *ngIf="!isFiltered">
+    <a mat-button class="filter-btn float-right" [matMenuTriggerFor]="menuSort">
+      <img src="assets/svg/sort.svg" alt="" draggable="false" width="18" height="18">
+      Sort by
+    </a>
+    <a mat-button class="filter-btn float-right" (click)="isFiltered = true">
+      <img src="assets/svg/filter.svg" alt="" draggable="false" width="18" height="18">
+      Result Filters
+    </a>
+  </div>
+
+  <div class="col-md-12" *ngIf="isFiltered" [@slideInOut]>
+    <metutors-classrooms-filter [filterForm]="filterForm" (submitFilters)="submitFilters.emit($event)"
+      (closeFilter)="isFiltered = $event"></metutors-classrooms-filter>
+  </div>
+
+  <div class="col-md-12 mb-3" *ngIf="!isFiltered">
+    <mat-chip-list>
+      <mat-chip *ngIf="maxStudents?.value">
+        {{ maxStudents?.value + ' students & up' }}
+        <mat-icon matChipRemove (click)="resetValue(maxStudents)">cancel</mat-icon>
+      </mat-chip>
+      <mat-chip *ngIf="days?.value">
+        {{ listDays[+days?.value - 1] }}
+        <mat-icon matChipRemove (click)="resetValue(days)">cancel</mat-icon>
+      </mat-chip>
+      <mat-chip *ngIf="type?.value">
+        {{ filterType[type?.value] }}
+        <mat-icon matChipRemove (click)="resetValue(type)">cancel</mat-icon>
+      </mat-chip>
+      <mat-chip *ngIf="startIn?.value">
+        {{ filterStart[startIn?.value] }}
+        <mat-icon matChipRemove (click)="resetValue(startIn)">cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <ng-container *ngIf="!isLoading">
+    <div class="col-md-12 mb-3" *ngFor="let classroom of classrooms">
+      <metutors-classroom-item-horizental [classroom]="classroom"></metutors-classroom-item-horizental>
+    </div>
+
+    <div class="col-12 d-flex flex-row-reverse" *ngIf="count > 10">
+      <pagination [totalItems]="count" previousText="&lsaquo;" nextText="&rsaquo;" (pageChanged)="pageChanged($event)">
+      </pagination>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="isLoading">
+    <div class="col-md-12" *ngFor="let _ of [1, 2]">
+      <metutors-classroom-placeholder></metutors-classroom-placeholder>
+    </div>
+  </ng-container>
+</div>
+
+<mat-menu #menuSort="matMenu" xPosition="before">
+  <button mat-menu-item (click)="submitFilters.emit({ sort: 'asc' })">
+    <mat-icon>vertical_align_top</mat-icon>
+    <span>Ascending</span>
+  </button>
+  <button mat-menu-item (click)="submitFilters.emit({ sort: 'desc' })">
+    <mat-icon>vertical_align_bottom</mat-icon>
+    <span>Descending</span>
+  </button>
+</mat-menu>

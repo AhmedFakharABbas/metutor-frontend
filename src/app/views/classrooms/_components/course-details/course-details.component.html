@@ -1,0 +1,56 @@
+<div class="course-details">
+  <div class="card">
+    <div class="card-body">
+      <h3>Course details</h3>
+      <ng-container *ngIf="!isLoading">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="position-relative">
+              <img [src]="course?.picture" meTutorsDefaultCourse class="card-img-top rounded" alt width="230"
+                height="230">
+              <label class="badge-item" [ngClass]="{
+                'popular': course?.tag === courseTags.pop,
+                'new': course?.tag === courseTags.new,
+                'top': course?.tag === courseTags.top
+              }">{{ course?.tag }}</label>
+            </div>
+          </div>
+        </div>
+
+        <h2>{{ course?.name }}</h2>
+        <p>{{ course?.description }}</p>
+
+        <ul class="list-unstyled row">
+          <li class="col-12">
+            <img src="assets/svg/timer.svg" draggable="false" width="20" height="20" alt="">
+            <span>Total hours : {{ course?.duration }}hours</span>
+          </li>
+          <li class="col-12">
+            <img src="assets/svg/user-formal.svg" draggable="false" width="20" height="20" alt="">
+            <span>Study type: {{ course?.tuitionValue }}</span>
+          </li>
+        </ul>
+      </ng-container>
+
+      <ng-container *ngIf="isLoading">
+        <div class="ph-item">
+          <div class="ph-col-12">
+            <div class="ph-avatar rounded"></div>
+          </div>
+
+          <div>
+            <div class="ph-row mt-2">
+              <div class="ph-col-10"></div>
+              <div class="ph-col-2 empty"></div>
+              <div class="ph-col-12 big"></div>
+              <div class="ph-col-6"></div>
+              <div class="ph-col-6 empty"></div>
+              <div class="ph-col-6"></div>
+              <div class="ph-col-6 empty"></div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

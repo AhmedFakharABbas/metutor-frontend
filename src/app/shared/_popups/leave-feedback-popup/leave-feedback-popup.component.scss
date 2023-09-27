@@ -1,0 +1,39 @@
+:host ::ng-deep .leave-feedback-popup {
+  .mat-dialog-title {
+    margin: 0 0 10px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000;
+
+      span {
+        font-weight: normal;
+        color: #696969;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .rating-block {
+    border-bottom: solid 1px #e2e2ea;
+    background-color: #f8f8f8;
+    padding: 15px 1.25rem;
+
+    h2 {
+      color: #2a2a2a;
+      font-size: 14px;
+    }
+
+    rating span.bs-rating-star.active {
+      color: #3BB3C1;
+    }
+
+    button {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 45px;
+      padding: 0 20px;
+    }
+  }
+}
